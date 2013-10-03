@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Catel.Core</id>
+    <version>3.6.1309271100-beta</version>
+    <title>Catel.Core</title>
+    <authors>GeertvanHorrik</authors>
+    <owners>GeertvanHorrik</owners>
+    <licenseUrl>http://www.catelproject.com/license/</licenseUrl>
+    <projectUrl>http://www.catelproject.com/</projectUrl>
+    <iconUrl>http://www.catenalogic.com/catel.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Catel.Core library which provides the core building blocks required when developing professional applications. This
+	  package contains an IoC container, logging, argument checking, message mediators and much more!</description>
+    <language>en-US</language>
+    <tags>mvvm model modelbase logging data object wpf silverlight sl windows phone wp wp7 wp8 winrt c# ioc servicelocator typefactory messaging messenger message mediator</tags>
+  </metadata>
+</package>

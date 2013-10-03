@@ -1,0 +1,17 @@
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\output\Debug\Client\Modules\Orca.Modules.AvalonEdit.dll
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\output\Debug\Client\Modules\Orca.Modules.AvalonEdit.pdb
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.csprojResolveAssemblyReference.cache
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView.baml
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView.g.cs
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit_MarkupCompile.cache
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.g.resources
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.dll
+K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.pdb
+K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Orca.Modules.AvalonEdit.dll
+K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Orca.Modules.AvalonEdit.pdb
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView.baml
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView.g.cs
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit_MarkupCompile.cache
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.g.resources
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.dll
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.pdb

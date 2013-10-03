@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orca", "Orca\Orca.csproj", "{4831E2F3-14FE-438F-9C8B-CE4825A2DBA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{C09F4E07-F0BF-464D-9398-81B3B3ED9CAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{B800CF70-042E-4863-8905-D9A8F5DE52C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C64364DE-10CF-4D50-A039-8D91E6239AA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shell", "Shell", "{63AFB9C3-8C2C-404F-9B42-6C3D7015E1C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4831E2F3-14FE-438F-9C8B-CE4825A2DBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4831E2F3-14FE-438F-9C8B-CE4825A2DBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4831E2F3-14FE-438F-9C8B-CE4825A2DBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4831E2F3-14FE-438F-9C8B-CE4825A2DBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63AFB9C3-8C2C-404F-9B42-6C3D7015E1C8} = {C64364DE-10CF-4D50-A039-8D91E6239AA1}
+		{4831E2F3-14FE-438F-9C8B-CE4825A2DBA0} = {63AFB9C3-8C2C-404F-9B42-6C3D7015E1C8}
+	EndGlobalSection
+EndGlobal
