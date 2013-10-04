@@ -71,6 +71,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Catel.MVVM.3.6.1309271100-beta\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -86,6 +87,21 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\..\..\..\DOKIMES\ORCHESTRA\Orca\src\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\..\..\..\DOKIMES\ORCHESTRA\Orca\src\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Expression">
+      <HintPath>..\..\..\..\DOKIMES\ORCHESTRA\Orca\src\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.Themes.Expression.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\..\..\..\DOKIMES\ORCHESTRA\Orca\src\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\..\..\..\DOKIMES\ORCHESTRA\Orca\src\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvalonEditModule.cs" />
@@ -105,17 +121,51 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Resources\Images\ActionPlot.png" />
-    <Resource Include="Resources\Images\action_browse.png" />
-    <Resource Include="Resources\Images\action_close.png" />
-    <Resource Include="Resources\Images\action_left.png" />
-    <Resource Include="Resources\Images\action_refresh.png" />
-    <Resource Include="Resources\Images\action_right.png" />
+    <Resource Include="Resources\Images\Copy.png" />
+    <Resource Include="Resources\Images\Cut.png" />
+    <Resource Include="Resources\Images\Delete.png" />
+    <Resource Include="Resources\Images\Open.png" />
+    <Resource Include="Resources\Images\Paste.png" />
+    <Resource Include="Resources\Images\Redo.png" />
+    <Resource Include="Resources\Images\Save.png" />
+    <Resource Include="Resources\Images\Undo.png" />
+    <Resource Include="Resources\Images\WordWrap.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\Images\Smiley_Happy.png" />
-    <Resource Include="Resources\Images\Table.png" />
-    <Resource Include="Resources\Images\Windows 8 Drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\document.png" />
+    <Resource Include="Resources\Images\property-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\Edit_Copy32.png" />
+    <Resource Include="Resources\Images\App\Edit_Cut32.png" />
+    <Resource Include="Resources\Images\App\Edit_Delete32.png" />
+    <Resource Include="Resources\Images\App\Edit_Find16.ico" />
+    <Resource Include="Resources\Images\App\Edit_Find32.png" />
+    <Resource Include="Resources\Images\App\Edit_Find_Replace32.png" />
+    <Resource Include="Resources\Images\App\Edit_Paste32.png" />
+    <Resource Include="Resources\Images\App\Edit_Redo32.png" />
+    <Resource Include="Resources\Images\App\Edit_Undo32.png" />
+    <Resource Include="Resources\Images\App\File_New32.png" />
+    <Resource Include="Resources\Images\App\File_Open32.png" />
+    <Resource Include="Resources\Images\App\File_Save16.png" />
+    <Resource Include="Resources\Images\App\File_Save32.png" />
+    <Resource Include="Resources\Images\App\File_Save64.png" />
+    <Resource Include="Resources\Images\App\File_Save_All32.png" />
+    <Resource Include="Resources\Images\App\Help_About32.png" />
+    <Resource Include="Resources\Images\App\Help_Hint32.png" />
+    <Resource Include="Resources\Images\App\ShowEnter32.png" />
+    <Resource Include="Resources\Images\App\ShowLineNumbers32.png" />
+    <Resource Include="Resources\Images\App\ShowSpaces32.png" />
+    <Resource Include="Resources\Images\App\ShowTab32.png" />
+    <Resource Include="Resources\Images\App\ShowWordWrap32.png" />
+    <Resource Include="Resources\Images\App\SyntaxHighlighting_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\DocTab\Lock-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

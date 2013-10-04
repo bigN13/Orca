@@ -21,7 +21,7 @@ namespace Orca.Modules.AvalonEdit.Views
     /// <summary>
     /// Interaction logic for AvalonEditView.xaml
     /// </summary>
-    public partial class AvalonEditView :  DocumentView
+    public partial class AvalonEditView : DocumentView
     {
         public AvalonEditView()
         {
