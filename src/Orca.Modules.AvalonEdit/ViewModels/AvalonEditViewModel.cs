@@ -74,5 +74,10 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         }
 
         #endregion
+
+        #region AvalonEditMainViewModel 
+
+        #endregion
+
     }
 }
