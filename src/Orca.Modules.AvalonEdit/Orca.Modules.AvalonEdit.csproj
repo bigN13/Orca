@@ -87,6 +87,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="Xceed.Wpf.AvalonDock">
       <HintPath>..\..\..\..\DOKIMES\ORCHESTRA\Orca\src\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
@@ -114,6 +115,7 @@
       <DependentUpon>AvalonEditView.xaml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <Compile Include="Views\BraceFoldingStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AvalonEditView.xaml">

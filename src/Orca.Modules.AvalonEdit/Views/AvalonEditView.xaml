@@ -11,7 +11,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d" 
-        d:DesignHeight="300" d:DesignWidth="300">
+        d:DesignHeight="300" d:DesignWidth="347">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,9 +22,9 @@
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
                 <MenuItem Header="New" Command="{Binding NewCommand}"/>
-                <MenuItem Header="Open" Command="{Binding OpenCommand}"/>
+                <MenuItem Header="Open" Click="openFileClick"/>
                 <Separator/>
-                <MenuItem Header="Save" Command="{Binding ActiveDocument.SaveCommand}"/>
+                <MenuItem Header="Save" Click="saveFileClick"/>
                 <MenuItem Header="Save As..." Command="{Binding ActiveDocument.SaveAsCommand}"/>
                 <Separator/>
                 <MenuItem Header="Close" Command="{Binding ActiveDocument.CloseCommand}"/>
@@ -69,19 +69,40 @@
               ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
                     <Image Source="/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Redo32.png" Height="32"/>
                 </Button>
+                <Separator/>
+                <CheckBox IsChecked="{Binding ElementName=textEditor,Path=WordWrap}">
+                    <Image Source="/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Copy32.png" Height="16"/>
+                </CheckBox>
+                <CheckBox IsChecked="{Binding ElementName=textEditor,Path=ShowLineNumbers}">
+                    <TextBlock Width="16" TextAlignment="Center">#</TextBlock>
+                </CheckBox>
+                <CheckBox IsChecked="{Binding ElementName=textEditor,Path=Options.ShowEndOfLine}">
+                    <TextBlock Width="16" TextAlignment="Center">¶</TextBlock>
+                </CheckBox>
+                <ComboBox Name="highlightingComboBox"
+				SelectedItem="{Binding SyntaxHighlighting, ElementName=textEditor}"
+				ItemsSource="{Binding Source={x:Static avalonEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
+				SelectionChanged="HighlightingComboBox_SelectionChanged"/>
             </ToolBar>
         </ToolBarTray>
         
         <avalonDock:DockingManager x:Name="dockManager" Grid.Row="2">
             <avalonDock:LayoutRoot>
                 <avalonDock:LayoutPanel Orientation="Horizontal">
-                    <avalonDock:LayoutAnchorablePaneGroup x:Name="LeftAnchorableGroup">
+                    <avalonDock:LayoutAnchorablePaneGroup x:Name="LeftAnchorableGroup" DockWidth="250">
                         <avalonDock:LayoutAnchorablePane>
-                            <avalonDock:LayoutAnchorable Title="Left Anch">
-                                <TreeView>
-                                    <TreeViewItem Header="Class1"/>
-                                    <TreeViewItem Header="Class2"/>
-                                </TreeView>
+                            <avalonDock:LayoutAnchorable Title="Properties">
+                                <StackPanel Orientation="Vertical">
+                                    <ComboBox Name="propertyGridComboBox" DockPanel.Dock="Top"
+				          SelectedIndex="0" SelectionChanged="propertyGridComboBoxSelectionChanged">
+                                        <ComboBoxItem>TextEditor</ComboBoxItem>
+                                        <ComboBoxItem>TextArea</ComboBoxItem>
+                                        <ComboBoxItem>Options</ComboBoxItem>
+                                    </ComboBox>
+                                    <WindowsFormsHost>
+                                        <forms:PropertyGrid x:Name="propertyGrid"/>
+                                    </WindowsFormsHost>
+                                </StackPanel>  
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
                     </avalonDock:LayoutAnchorablePaneGroup>
@@ -89,7 +110,7 @@
                         <avalonDock:LayoutPanel Orientation="Horizontal">
                             <avalonDock:LayoutDocumentPaneGroup x:Name="leftDocumentGroup">
                                 <avalonDock:LayoutDocumentPane>
-                                    <avalonDock:LayoutDocument Title="Left Doc">
+                                    <avalonDock:LayoutDocument Title="My Doc">
                                         <avalonEdit:TextEditor Grid.Row="2" SnapsToDevicePixels="True" 
                                         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
                                         Name="textEditor"
@@ -104,7 +125,10 @@
                     
                 </avalonDock:LayoutPanel>
             </avalonDock:LayoutRoot>
+            
         </avalonDock:DockingManager>
+        
+        
 
 
 
