@@ -2,6 +2,7 @@
 using Catel.Messaging;
 using Catel.MVVM;
 using Catel.MVVM.Services;
+using Orca.Modules.AvalonEdit.ViewModel;
 using Orchestra.Services;
 using System;
 using System.Collections.Generic;
@@ -66,7 +67,7 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         /// <value>
         /// The test.
         /// </value>
-        public Command Test { get; private set; }
+        public Commands Test { get; private set; }
 
         private void OnTestExecute()
         {

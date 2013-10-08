@@ -106,21 +106,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvalonEditModule.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Common\MyCompletionData.cs" />
+    <Compile Include="Converter\ActiveDocumentConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\AvalonEditViewModel.cs" />
+    <Compile Include="ViewModels\FileStatsViewModel.cs" />
+    <Compile Include="ViewModels\FileViewModel.cs" />
+    <Compile Include="ViewModels\PaneViewModel.cs" />
+    <Compile Include="ViewModels\Workspace.cs" />
     <Compile Include="Views\AvalonEditView.xaml.cs">
       <DependentUpon>AvalonEditView.xaml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
     <Compile Include="Views\BraceFoldingStrategy.cs" />
+    <Compile Include="Views\Copy of AvalonEditView.xaml.cs">
+      <DependentUpon>Copy of AvalonEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Base\ToolViewModel.cs" />
+    <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="Views\Pane\LayoutInitializer.cs" />
+    <Compile Include="Views\Pane\PanesStyleSelector.cs" />
+    <Compile Include="Views\Pane\PanesTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AvalonEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Copy of AvalonEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
