@@ -2,7 +2,7 @@
 using Catel.Messaging;
 using Catel.MVVM;
 using Catel.MVVM.Services;
-using Orca.Modules.AvalonEdit.ViewModels;
+using Orca.Modules.AvalonEdit.ViewModel;
 using Orchestra.Models;
 using Orchestra.Services;
 using System;
@@ -62,9 +62,73 @@ namespace Orca.Modules.AvalonEdit
             var typeFactory = TypeFactory.Default;
 
             var avalonViewModel = typeFactory.CreateInstance<AvalonEditViewModel>();
+
+            #region File Commands
             ribbonService.RegisterRibbonItem(
-                new RibbonButton(Name, Name, "Open",
-                    new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/Smiley_Happy.png" });
+            new RibbonButton(Name, "File", "New",
+             new Command(() => orchestraService.ShowDocument(avalonViewModel))) 
+             { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" });
+
+
+            ribbonService.RegisterRibbonItem(
+                new RibbonButton(Name, "File", "Open",
+                    new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Open32.png" });
+
+      
+            ribbonService.RegisterRibbonItem(
+               new RibbonButton(Name, "File", "Save",
+                   new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Save32.png" });
+
+            ribbonService.RegisterRibbonItem(
+              new RibbonButton(Name, "File", "Save As",
+                  new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_SaveAs32.png" });
+
+            ribbonService.RegisterRibbonItem(
+              new RibbonButton(Name, "File", "Close",
+                  new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Close32.png" });
+
+            ribbonService.RegisterRibbonItem(
+             new RibbonButton(Name, "Edit", "Edit",
+                 new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Copy32.png" });
+
+            ribbonService.RegisterRibbonItem(
+             new RibbonButton(Name, "Edit", "Cut",
+                 new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Cut32.png" });
+
+            ribbonService.RegisterRibbonItem(
+            new RibbonButton(Name, "Edit", "Paste",
+                new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Paste32.png" });
+
+            ribbonService.RegisterRibbonItem(
+            new RibbonButton(Name, "Edit", "Delete",
+                new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Delete32.png" });
+            #endregion
+
+            #region Undo / Redo Commands
+            ribbonService.RegisterRibbonItem(
+            new RibbonButton(Name, "Undo", "Undo",
+              new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Undo32.png" });
+
+            ribbonService.RegisterRibbonItem(
+            new RibbonButton(Name, "Undo", "Redo",
+            new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Redo32.png" });
+            #endregion
+
+            #region Text Editor Commands
+            ribbonService.RegisterRibbonItem(
+               new RibbonButton(Name, "Word Wrap", "Text Editor",
+               new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_WordWrap32.png" });
+
+            ribbonService.RegisterRibbonItem(
+              new RibbonButton(Name, "Show Line Numbers", "Text Editor",
+              new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Numbers32.png" });
+
+            ribbonService.RegisterRibbonItem(
+             new RibbonButton(Name, "Show End Of Line", "Text Editor",
+             new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_EndLine32.png" });
+
+
+            #endregion
 
             //var userControl1ViewModel = typeFactory.CreateInstance<avalonViewModel>();
             //ribbonService.RegisterRibbonItem(

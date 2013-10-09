@@ -106,37 +106,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvalonEditModule.cs" />
-    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Command\RelayCommands.cs" />
     <Compile Include="Common\MyCompletionData.cs" />
     <Compile Include="Converter\ActiveDocumentConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\AvalonEditViewModel.cs" />
-    <Compile Include="ViewModels\FileStatsViewModel.cs" />
-    <Compile Include="ViewModels\FileViewModel.cs" />
-    <Compile Include="ViewModels\PaneViewModel.cs" />
-    <Compile Include="ViewModels\Workspace.cs" />
-    <Compile Include="Views\AvalonEditView.xaml.cs">
+    <Compile Include="ViewModel\AvalonEditViewModel.cs" />
+    <Compile Include="ViewModel\FileStatsViewModel.cs" />
+    <Compile Include="ViewModel\FileViewModel.cs" />
+    <Compile Include="ViewModel\PaneViewModel.cs" />
+    <Compile Include="ViewModel\Workspace.cs" />
+    <Compile Include="View\AvalonEditView.xaml.cs">
       <DependentUpon>AvalonEditView.xaml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <Compile Include="Views\BraceFoldingStrategy.cs" />
-    <Compile Include="Views\Copy of AvalonEditView.xaml.cs">
+    <Compile Include="View\BraceFoldingStrategy.cs" />
+    <Compile Include="View\Copy of AvalonEditView.xaml.cs">
       <DependentUpon>Copy of AvalonEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Base\ToolViewModel.cs" />
-    <Compile Include="ViewModels\Base\ViewModelBase.cs" />
-    <Compile Include="Views\Pane\LayoutInitializer.cs" />
-    <Compile Include="Views\Pane\PanesStyleSelector.cs" />
-    <Compile Include="Views\Pane\PanesTemplateSelector.cs" />
+    <Compile Include="ViewModel\Base\ToolViewModel.cs" />
+    <Compile Include="ViewModel\Base\ViewModelBase.cs" />
+    <Compile Include="View\Pane\LayoutInitializer.cs" />
+    <Compile Include="View\Pane\PanesStyleSelector.cs" />
+    <Compile Include="View\Pane\PanesTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\AvalonEditView.xaml">
+    <Page Include="View\AvalonEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Copy of AvalonEditView.xaml">
+    <Page Include="View\Copy of AvalonEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -186,6 +186,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\App\DocTab\Lock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\File_Close32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\File_SaveAs32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\Edit_Numbers32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\Edit_WordWrap32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\App\Edit_EndLine32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
