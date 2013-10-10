@@ -14,14 +14,14 @@
 
   **********************************************************************/
 
-using Orca.Modules.AvalonEdit.ViewModel.Base;
+using Orca.Modules.AvalonEdit.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Media;
 
-namespace Orca.Modules.AvalonEdit.ViewModel
+namespace Orca.Modules.AvalonEdit.ViewModels
 {
     class PaneViewModel : ViewModelBase
     {

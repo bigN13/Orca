@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using Xceed.Wpf.AvalonDock.Layout;
 
-namespace AvalonDock.MVVMTestApp
+namespace Orca.Modules.AvalonEdit.Views.Pane
 {
     class LayoutInitializer : ILayoutUpdateStrategy
     {

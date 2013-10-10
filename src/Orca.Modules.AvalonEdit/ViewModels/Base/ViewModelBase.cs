@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 
-namespace Orca.Modules.AvalonEdit.ViewModel.Base
+namespace Orca.Modules.AvalonEdit.ViewModels.Base
 {
     class ViewModelBase : INotifyPropertyChanged
     {

@@ -21,8 +21,9 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Layout;
+using Orca.Modules.AvalonEdit.ViewModels;
 
-namespace AvalonDock.MVVMTestApp
+namespace Orca.Modules.AvalonEdit.Views.Pane
 {
     class PanesTemplateSelector : DataTemplateSelector
     {

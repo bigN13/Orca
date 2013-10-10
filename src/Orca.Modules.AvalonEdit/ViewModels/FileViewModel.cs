@@ -26,7 +26,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using Orca.Modules.AvalonEdit.Commands;
 
-namespace Orca.Modules.AvalonEdit.ViewModel
+namespace Orca.Modules.AvalonEdit.ViewModels
 {
     class FileViewModel : PaneViewModel
     {

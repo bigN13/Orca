@@ -20,8 +20,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows;
+using Orca.Modules.AvalonEdit.ViewModels.Base;
+using Orca.Modules.AvalonEdit.ViewModels;
 
-namespace AvalonDock.MVVMTestApp
+namespace Orca.Modules.AvalonEdit.Views.Pane
 {
     class PanesStyleSelector : StyleSelector
     {

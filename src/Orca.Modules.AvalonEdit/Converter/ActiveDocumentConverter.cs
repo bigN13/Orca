@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Data;
-using Orca.Modules.AvalonEdit.ViewModel;
+using Orca.Modules.AvalonEdit.ViewModels;
 
 namespace Orca.Modules.AvalonEdit.Converter
 {

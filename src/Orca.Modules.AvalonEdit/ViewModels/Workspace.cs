@@ -24,10 +24,10 @@ using Microsoft.Win32;
 using System.IO;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Layout;
-using Orca.Modules.AvalonEdit.ViewModel.Base;
+using Orca.Modules.AvalonEdit.ViewModels.Base;
 using Orca.Modules.AvalonEdit.Commands;
 
-namespace Orca.Modules.AvalonEdit.ViewModel
+namespace Orca.Modules.AvalonEdit.ViewModels
 {
     class Workspace : ViewModelBase
     {
@@ -36,12 +36,12 @@ namespace Orca.Modules.AvalonEdit.ViewModel
 
         }
 
-        //static Workspace _this = new Workspace();
+        static Workspace _this = new Workspace();
 
-        //public static Workspace This
-        //{
-        //    get { return _this; }
-        //}
+        public static Workspace This
+        {
+            get { return _this; }
+        }
 
 
         ObservableCollection<FileViewModel> _files = new ObservableCollection<FileViewModel>();

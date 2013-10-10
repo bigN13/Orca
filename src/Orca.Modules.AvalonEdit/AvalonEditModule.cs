@@ -2,7 +2,8 @@
 using Catel.Messaging;
 using Catel.MVVM;
 using Catel.MVVM.Services;
-using Orca.Modules.AvalonEdit.ViewModel;
+using Orca.Modules.AvalonEdit.Views;
+using Orca.Modules.AvalonEdit.ViewModels;
 using Orchestra.Models;
 using Orchestra.Services;
 using System;
@@ -36,7 +37,8 @@ namespace Orca.Modules.AvalonEdit
         /// </summary>
         protected override void OnInitialized()
         {
-            var orchestraService = GetService<IOrchestraService>();
+            //var orchestraService = GetService<IOrchestraService>();
+            //orchestraService.ShowDocument<AvalonEditViewModel>();
 
             // TODO: Register ribbon items
             //var openRibbonItem = new RibbonItem(ModuleName, ModuleName, "Action name", new Command(() =>
@@ -60,80 +62,78 @@ namespace Orca.Modules.AvalonEdit
 
             // Module specific
             var typeFactory = TypeFactory.Default;
+            var avalonEditViewModel = typeFactory.CreateInstance<AvalonEditViewModel>();
+            ribbonService.RegisterRibbonItem(new RibbonButton(HomeRibbonTabName, ModuleName, "New", 
+                new Command(() => orchestraService.ShowDocument(avalonEditViewModel))) {ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" });
 
-            var avalonViewModel = typeFactory.CreateInstance<AvalonEditViewModel>();
+#region File Commands
 
-            #region File Commands
-            ribbonService.RegisterRibbonItem(
-            new RibbonButton(Name, "File", "New",
-             new Command(() => orchestraService.ShowDocument(avalonViewModel))) 
-             { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" });
+            // View specific
+            var newFileButton = new RibbonButton(Name, "File", "New", "NewFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(newFileButton, ModuleName);
 
+            var OpenFileButton = new RibbonButton(Name, "File", "Open", "OpenFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Open32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(OpenFileButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-                new RibbonButton(Name, "File", "Open",
-                    new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Open32.png" });
+            var SaveFileButton = new RibbonButton(Name, "File", "Save", "SaveFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Save32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(SaveFileButton, ModuleName);
 
-      
-            ribbonService.RegisterRibbonItem(
-               new RibbonButton(Name, "File", "Save",
-                   new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Save32.png" });
+            var SaveFileAsButton = new RibbonButton(Name, "File", "Save As", "SaveAsFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_SaveAs32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(SaveFileAsButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-              new RibbonButton(Name, "File", "Save As",
-                  new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_SaveAs32.png" });
+            var CloseFileButton = new RibbonButton(Name, "File", "Close", "CloseFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Close32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(CloseFileButton, ModuleName);
+#endregion
 
-            ribbonService.RegisterRibbonItem(
-              new RibbonButton(Name, "File", "Close",
-                  new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Close32.png" });
+#region Edit Commands
+            var EditTextButton = new RibbonButton(Name, "Edit", "Edit", "EditText") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Copy32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(EditTextButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-             new RibbonButton(Name, "Edit", "Edit",
-                 new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Copy32.png" });
+            var CutTextButton = new RibbonButton(Name, "Edit", "Cut", "CutText") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Cut32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(CutTextButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-             new RibbonButton(Name, "Edit", "Cut",
-                 new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Cut32.png" });
+            var PasteTextButton = new RibbonButton(Name, "Edit", "Paste", "PasteText") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Paste32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(PasteTextButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-            new RibbonButton(Name, "Edit", "Paste",
-                new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Paste32.png" });
-
-            ribbonService.RegisterRibbonItem(
-            new RibbonButton(Name, "Edit", "Delete",
-                new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Delete32.png" });
-            #endregion
+            var DeleteTextButton = new RibbonButton(Name, "Edit", "Delete", "DeleteText") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Delete32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(DeleteTextButton, ModuleName);
+#endregion          
+          
+       
 
             #region Undo / Redo Commands
-            ribbonService.RegisterRibbonItem(
-            new RibbonButton(Name, "Undo", "Undo",
-              new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Undo32.png" });
+            var UndoButton = new RibbonButton(Name, "Undo", "Undo", "UndoAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Undo32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(UndoButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-            new RibbonButton(Name, "Undo", "Redo",
-            new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Redo32.png" });
-            #endregion
+            var RedoButton = new RibbonButton(Name, "Undo", "Redo", "RedoAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Redo32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(RedoButton, ModuleName);
+            #endregion  
+
 
             #region Text Editor Commands
-            ribbonService.RegisterRibbonItem(
-               new RibbonButton(Name, "Word Wrap", "Text Editor",
-               new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_WordWrap32.png" });
+            var WordWrapButton = new RibbonButton(Name, "Text Editor", "Word Wrap", "WordWrapAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_WordWrap32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(WordWrapButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-              new RibbonButton(Name, "Show Line Numbers", "Text Editor",
-              new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Numbers32.png" });
+            var ShowLineNumbersButton = new RibbonButton(Name, "Text Editor", "Show Line Numbers", "ShowLineNumbersAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Numbers32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(ShowLineNumbersButton, ModuleName);
 
-            ribbonService.RegisterRibbonItem(
-             new RibbonButton(Name, "Show End Of Line", "Text Editor",
-             new Command(() => orchestraService.ShowDocument(avalonViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_EndLine32.png" });
-
-
+            var ShowEndOfLineButton = new RibbonButton(Name, "Text Editor", "Show End Of Line", "ShowLineNumbersAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_EndLine32.png" };
+            ribbonService.RegisterContextualRibbonItem<AvalonEditView>(ShowEndOfLineButton, ModuleName);
+           
             #endregion
 
             //var userControl1ViewModel = typeFactory.CreateInstance<avalonViewModel>();
             //ribbonService.RegisterRibbonItem(
             //    new RibbonButton(Name, Name, "Hello Word!",
             //        new Command(() => orchestraService.ShowDocument(userControl1ViewModel))) { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/ActionPlot.png" });
+
+
+            // Demo: show two pages with different tags
+            var orchestraViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<AvalonEditViewModel>("Orchestra");
+            //orchestraViewModel.Url = "http://www.github.com/Orcomp/Orchestra";
+            orchestraService.ShowDocument(orchestraViewModel, "orchestra");
+
+
         }
     }
 }

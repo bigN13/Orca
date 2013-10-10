@@ -2,7 +2,9 @@
 using ICSharpCode.AvalonEdit.Folding;
 using ICSharpCode.AvalonEdit.Highlighting;
 using Microsoft.Win32;
+using Orca.Modules.AvalonEdit.Commands;
 using Orca.Modules.AvalonEdit.Common;
+using Orca.Modules.AvalonEdit.ViewModels;
 using Orchestra.Views;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Xml;
+using Xceed.Wpf.AvalonDock.Layout.Serialization;
 
 namespace Orca.Modules.AvalonEdit.Views
 {
@@ -33,185 +36,104 @@ namespace Orca.Modules.AvalonEdit.Views
         {
             InitializeComponent();
 
-            // Load our custom highlighting definition
-            //IHighlightingDefinition customHighlighting;
-            //using (Stream s = typeof(AvalonEditView).Assembly.GetManifestResourceStream("AvalonEdit.Sample.CustomHighlighting.xshd"))
-            //{
-            //    if (s == null)
-            //        throw new InvalidOperationException("Could not find embedded resource");
-            //    using (XmlReader reader = new XmlTextReader(s))
-            //    {
-            //        customHighlighting = ICSharpCode.AvalonEdit.Highlighting.Xshd.
-            //            HighlightingLoader.Load(reader, HighlightingManager.Instance);
-            //    }
-            //}
-            //// and register it in the HighlightingManager
-            //HighlightingManager.Instance.RegisterHighlighting("Custom Highlighting", new string[] { ".cool" }, customHighlighting);
+            this.DataContext = Workspace.This;
 
-
-
-            propertyGridComboBox.SelectedIndex = 2;
-
-            // in the constructor:
-            textEditor.TextArea.TextEntering += textEditor_TextArea_TextEntering;
-            textEditor.TextArea.TextEntered += textEditor_TextArea_TextEntered;
-
-            //DispatcherTimer foldingUpdateTimer = new DispatcherTimer();
-            //foldingUpdateTimer.Interval = TimeSpan.FromSeconds(2);
-            //foldingUpdateTimer.Tick += foldingUpdateTimer_Tick;
-            //foldingUpdateTimer.Start();
+            this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
+            this.Unloaded += new RoutedEventHandler(MainWindow_Unloaded);
         }
 
-        string currentFileName;
-
-        #region Commands
-        void openFileClick(object sender, RoutedEventArgs e)
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.CheckFileExists = true;
-            if (dlg.ShowDialog() ?? false)
+            var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
+            serializer.LayoutSerializationCallback += (s, args) =>
             {
-                currentFileName = dlg.FileName;
-                textEditor.Load(currentFileName);
-                textEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(System.IO.Path.GetExtension(currentFileName));
-            }
+                args.Content = args.Content;
+            };
+
+            if (File.Exists(@".\AvalonDock.config"))
+                serializer.Deserialize(@".\AvalonDock.config");
         }
 
-        void saveFileClick(object sender, EventArgs e)
+        void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
-            if (currentFileName == null)
+            var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
+            serializer.Serialize(@".\AvalonDock.config");
+        }
+
+        #region LoadLayoutCommand
+        RelayCommand _loadLayoutCommand = null;
+        public ICommand LoadLayoutCommand
+        {
+            get
             {
-                SaveFileDialog dlg = new SaveFileDialog();
-                dlg.DefaultExt = ".txt";
-                if (dlg.ShowDialog() ?? false)
+                if (_loadLayoutCommand == null)
                 {
-                    currentFileName = dlg.FileName;
+                    _loadLayoutCommand = new RelayCommand((p) => OnLoadLayout(p), (p) => CanLoadLayout(p));
                 }
-                else
-                {
-                    return;
-                }
+
+                return _loadLayoutCommand;
             }
-            textEditor.Save(currentFileName);
         }
 
-        void propertyGridComboBoxSelectionChanged(object sender, RoutedEventArgs e)
+        private bool CanLoadLayout(object parameter)
         {
-            if (propertyGrid == null)
-                return;
-            switch (propertyGridComboBox.SelectedIndex)
+            return File.Exists(@".\AvalonDock.Layout.config");
+        }
+
+        private void OnLoadLayout(object parameter)
+        {
+            var layoutSerializer = new XmlLayoutSerializer(dockManager);
+            //Here I've implemented the LayoutSerializationCallback just to show
+            // a way to feed layout desarialization with content loaded at runtime
+            //Actually I could in this case let AvalonDock to attach the contents
+            //from current layout using the content ids
+            //LayoutSerializationCallback should anyway be handled to attach contents
+            //not currently loaded
+            layoutSerializer.LayoutSerializationCallback += (s, e) =>
             {
-                case 0:
-                    propertyGrid.SelectedObject = textEditor;
-                    break;
-                case 1:
-                    propertyGrid.SelectedObject = textEditor.TextArea;
-                    break;
-                case 2:
-                    propertyGrid.SelectedObject = textEditor.Options;
-                    break;
-            }
+                //if (e.Model.ContentId == FileStatsViewModel.ToolContentId)
+                //    e.Content = Workspace.This.FileStats;
+                //else if (!string.IsNullOrWhiteSpace(e.Model.ContentId) &&
+                //    File.Exists(e.Model.ContentId))
+                //    e.Content = Workspace.This.Open(e.Model.ContentId);
+            };
+            layoutSerializer.Deserialize(@".\AvalonDock.Layout.config");
         }
 
         #endregion
 
-        //CompletionWindow completionWindow;
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        #region SaveLayoutCommand
+        RelayCommand _saveLayoutCommand = null;
+        public ICommand SaveLayoutCommand
         {
-            MessageBox.Show("Heloo you");
-        }
-
-        CompletionWindow completionWindow;
-
-        void textEditor_TextArea_TextEntered(object sender, TextCompositionEventArgs e)
-        {
-            if (e.Text == ".")
+            get
             {
-                // Open code completion after the user has pressed dot:
-                completionWindow = new CompletionWindow(textEditor.TextArea);
-                IList<ICompletionData> data = completionWindow.CompletionList.CompletionData;
-                data.Add(new MyCompletionData("Item1"));
-                data.Add(new MyCompletionData("Item2"));
-                data.Add(new MyCompletionData("Item3"));
-                completionWindow.Show();
-                completionWindow.Closed += delegate
+                if (_saveLayoutCommand == null)
                 {
-                    completionWindow = null;
-                };
-            }
-        }
-
-        void textEditor_TextArea_TextEntering(object sender, TextCompositionEventArgs e)
-        {
-            if (e.Text.Length > 0 && completionWindow != null)
-            {
-                if (!char.IsLetterOrDigit(e.Text[0]))
-                {
-                    // Whenever a non-letter is typed while the completion window is open,
-                    // insert the currently selected element.
-                    completionWindow.CompletionList.RequestInsertion(e);
+                    _saveLayoutCommand = new RelayCommand((p) => OnSaveLayout(p), (p) => CanSaveLayout(p));
                 }
+
+                return _saveLayoutCommand;
             }
-            // Do not set e.Handled=true.
-            // We still want to insert the character that was typed.
         }
 
-        #region Folding
-        FoldingManager foldingManager;
-        AbstractFoldingStrategy foldingStrategy;
-
-        void HighlightingComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private bool CanSaveLayout(object parameter)
         {
-            if (textEditor.SyntaxHighlighting == null)
-            {
-                foldingStrategy = null;
-            }
-            else
-            {
-                switch (textEditor.SyntaxHighlighting.Name)
-                {
-                    case "XML":
-                        foldingStrategy = new XmlFoldingStrategy();
-                        textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.DefaultIndentationStrategy();
-                        break;
-                    case "C#":
-                    case "C++":
-                    case "PHP":
-                    case "Java":
-                        textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
-                        foldingStrategy = new BraceFoldingStrategy();
-                        break;
-                    default:
-                        textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.DefaultIndentationStrategy();
-                        foldingStrategy = null;
-                        break;
-                }
-            }
-            if (foldingStrategy != null)
-            {
-                if (foldingManager == null)
-                    foldingManager = FoldingManager.Install(textEditor.TextArea);
-                foldingStrategy.UpdateFoldings(foldingManager, textEditor.Document);
-            }
-            else
-            {
-                if (foldingManager != null)
-                {
-                    FoldingManager.Uninstall(foldingManager);
-                    foldingManager = null;
-                }
-            }
+            return true;
         }
 
-        void foldingUpdateTimer_Tick(object sender, EventArgs e)
+        private void OnSaveLayout(object parameter)
         {
-            if (foldingStrategy != null)
-            {
-                foldingStrategy.UpdateFoldings(foldingManager, textEditor.Document);
-            }
+            var layoutSerializer = new XmlLayoutSerializer(dockManager);
+            layoutSerializer.Serialize(@".\AvalonDock.Layout.config");
         }
+
         #endregion
 
+        private void OnDumpToConsole(object sender, RoutedEventArgs e)
+        {
+            // Uncomment when TRACE is activated on AvalonDock project
+            //dockManager.Layout.ConsoleDump(0);
+        }
     }
 }

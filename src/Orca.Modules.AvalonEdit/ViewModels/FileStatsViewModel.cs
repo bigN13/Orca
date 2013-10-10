@@ -21,9 +21,9 @@ using System.Text;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
-using Orca.Modules.AvalonEdit.ViewModel.Base;
+using Orca.Modules.AvalonEdit.ViewModels.Base;
 
-namespace Orca.Modules.AvalonEdit.ViewModel
+namespace Orca.Modules.AvalonEdit.ViewModels
 {
     class FileStatsViewModel : ToolViewModel
     {

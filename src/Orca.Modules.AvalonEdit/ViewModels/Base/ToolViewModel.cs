@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Orca.Modules.AvalonEdit.ViewModel.Base
+namespace Orca.Modules.AvalonEdit.ViewModels.Base
 {
     class ToolViewModel : PaneViewModel
     {
