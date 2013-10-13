@@ -10,13 +10,13 @@ K:\Visual Studio 2012\DOKIMES\ORCHESTRA\Orca\src\Orca.Modules.AvalonEdit\obj\Deb
 K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Orca.Modules.AvalonEdit.dll
 K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Orca.Modules.AvalonEdit.pdb
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.csprojResolveAssemblyReference.cache
-K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\Copy of AvalonEditView.baml
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView2.baml
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView.g.cs
-K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\Copy of AvalonEditView.g.cs
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView2.g.cs
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit_MarkupCompile.cache
-K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit_MarkupCompile.lref
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Views\AvalonEditView.baml
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.g.resources
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.dll
 K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit.pdb
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\Orca.Modules.AvalonEdit_MarkupCompile.lref

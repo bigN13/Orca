@@ -64,9 +64,10 @@ namespace Orca.Modules.AvalonEdit
             var typeFactory = TypeFactory.Default;
             var avalonEditViewModel = typeFactory.CreateInstance<AvalonEditViewModel>();
             ribbonService.RegisterRibbonItem(new RibbonButton(HomeRibbonTabName, ModuleName, "New", 
-                new Command(() => orchestraService.ShowDocument(avalonEditViewModel))) {ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" });
+                new Command(() => orchestraService.ShowDocument(avalonEditViewModel))) 
+                {ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" });
 
-#region File Commands
+            #region File Buttons
 
             // View specific
             var newFileButton = new RibbonButton(Name, "File", "New", "NewFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" };
@@ -83,9 +84,9 @@ namespace Orca.Modules.AvalonEdit
 
             var CloseFileButton = new RibbonButton(Name, "File", "Close", "CloseFile") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_Close32.png" };
             ribbonService.RegisterContextualRibbonItem<AvalonEditView>(CloseFileButton, ModuleName);
-#endregion
+            #endregion
 
-#region Edit Commands
+            #region Edit Buttons
             var EditTextButton = new RibbonButton(Name, "Edit", "Edit", "EditText") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Copy32.png" };
             ribbonService.RegisterContextualRibbonItem<AvalonEditView>(EditTextButton, ModuleName);
 
@@ -97,11 +98,9 @@ namespace Orca.Modules.AvalonEdit
 
             var DeleteTextButton = new RibbonButton(Name, "Edit", "Delete", "DeleteText") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Delete32.png" };
             ribbonService.RegisterContextualRibbonItem<AvalonEditView>(DeleteTextButton, ModuleName);
-#endregion          
+            #endregion          
           
-       
-
-            #region Undo / Redo Commands
+            #region Undo / Redo Buttons
             var UndoButton = new RibbonButton(Name, "Undo", "Undo", "UndoAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_Undo32.png" };
             ribbonService.RegisterContextualRibbonItem<AvalonEditView>(UndoButton, ModuleName);
 
@@ -109,8 +108,7 @@ namespace Orca.Modules.AvalonEdit
             ribbonService.RegisterContextualRibbonItem<AvalonEditView>(RedoButton, ModuleName);
             #endregion  
 
-
-            #region Text Editor Commands
+            #region Text Editor Buttons
             var WordWrapButton = new RibbonButton(Name, "Text Editor", "Word Wrap", "WordWrapAction") { ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/Edit_WordWrap32.png" };
             ribbonService.RegisterContextualRibbonItem<AvalonEditView>(WordWrapButton, ModuleName);
 
@@ -129,9 +127,13 @@ namespace Orca.Modules.AvalonEdit
 
 
             // Demo: show two pages with different tags
-            var orchestraViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<AvalonEditViewModel>("Orchestra");
-            //orchestraViewModel.Url = "http://www.github.com/Orcomp/Orchestra";
-            orchestraService.ShowDocument(orchestraViewModel, "orchestra");
+            //var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<AvalonEditViewModel>("Orca Avalon Editor");
+            //orchestraService.ShowDocument(orcaViewModel, "Orca Avalon Editor");
+
+
+
+
+
 
 
         }

@@ -36,10 +36,14 @@ namespace Orca.Modules.AvalonEdit.Views
         {
             InitializeComponent();
 
-            this.DataContext = Workspace.This;
+            //this.DataContext = Workspace.This;
 
-            this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
-            this.Unloaded += new RoutedEventHandler(MainWindow_Unloaded);
+            //this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
+            //this.Unloaded += new RoutedEventHandler(MainWindow_Unloaded);
+
+            
+            textEditor.TextArea.TextEntering += textEditor_TextArea_TextEntering;
+            textEditor.TextArea.TextEntered += textEditor_TextArea_TextEntered;
         }
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -59,6 +63,9 @@ namespace Orca.Modules.AvalonEdit.Views
             var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
             serializer.Serialize(@".\AvalonDock.config");
         }
+
+
+
 
         #region LoadLayoutCommand
         RelayCommand _loadLayoutCommand = null;
@@ -135,5 +142,41 @@ namespace Orca.Modules.AvalonEdit.Views
             // Uncomment when TRACE is activated on AvalonDock project
             //dockManager.Layout.ConsoleDump(0);
         }
+
+        CompletionWindow completionWindow;
+
+        void textEditor_TextArea_TextEntered(object sender, TextCompositionEventArgs e)
+        {
+            if (e.Text == ".")
+            {
+                // Open code completion after the user has pressed dot:
+                completionWindow = new CompletionWindow(textEditor.TextArea);
+                IList<ICompletionData> data = completionWindow.CompletionList.CompletionData;
+                data.Add(new MyCompletionData("Item1"));
+                data.Add(new MyCompletionData("Item2"));
+                data.Add(new MyCompletionData("Item3"));
+                completionWindow.Show();
+                completionWindow.Closed += delegate
+                {
+                    completionWindow = null;
+                };
+            }
+        }
+
+        void textEditor_TextArea_TextEntering(object sender, TextCompositionEventArgs e)
+        {
+            if (e.Text.Length > 0 && completionWindow != null)
+            {
+                if (!char.IsLetterOrDigit(e.Text[0]))
+                {
+                    // Whenever a non-letter is typed while the completion window is open,
+                    // insert the currently selected element.
+                    completionWindow.CompletionList.RequestInsertion(e);
+                }
+            }
+            // Do not set e.Handled=true.
+            // We still want to insert the character that was typed.
+        }
+
     }
 }

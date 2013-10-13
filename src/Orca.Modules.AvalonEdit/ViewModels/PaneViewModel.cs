@@ -23,7 +23,7 @@ using System.Windows.Media;
 
 namespace Orca.Modules.AvalonEdit.ViewModels
 {
-    class PaneViewModel : ViewModelBase
+    class PaneViewModel : Catel.MVVM.ViewModelBase
     {
         public PaneViewModel()
         { }
@@ -106,7 +106,5 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         }
 
         #endregion
-
-
     }
 }

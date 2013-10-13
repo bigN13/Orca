@@ -29,7 +29,7 @@ using Orca.Modules.AvalonEdit.Commands;
 
 namespace Orca.Modules.AvalonEdit.ViewModels
 {
-    class Workspace : ViewModelBase
+    class Workspace : Catel.MVVM.ViewModelBase
     {
         protected Workspace()
         { 
@@ -122,6 +122,13 @@ namespace Orca.Modules.AvalonEdit.ViewModels
             return fileViewModel;
         }
 
+        public void NewFileCreate()
+        {
+            if (_newCommand == null)
+            {
+                _newCommand = new RelayCommand((p) => OnNew(p), (p) => CanNew(p));
+            }
+        }
         #endregion 
 
         #region NewCommand

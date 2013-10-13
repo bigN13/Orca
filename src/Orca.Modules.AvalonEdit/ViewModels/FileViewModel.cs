@@ -37,7 +37,7 @@ namespace Orca.Modules.AvalonEdit.ViewModels
             Title = FileName;
 
             //Set the icon only for open documents (just a test)
-            IconSource = ISC.ConvertFromInvariantString(@"pack://application:,,/Images/document.png") as ImageSource;
+            //IconSource = ISC.ConvertFromInvariantString(@"pack://application:,,Resources/Images/document.png") as ImageSource;
         }
 
         public FileViewModel()
