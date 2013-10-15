@@ -48,20 +48,20 @@ namespace Orca.Modules.AvalonEdit.Views
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            serializer.LayoutSerializationCallback += (s, args) =>
-            {
-                args.Content = args.Content;
-            };
+            //var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
+            //serializer.LayoutSerializationCallback += (s, args) =>
+            //{
+            //    args.Content = args.Content;
+            //};
 
-            if (File.Exists(@".\AvalonDock.config"))
-                serializer.Deserialize(@".\AvalonDock.config");
+            //if (File.Exists(@".\AvalonDock.config"))
+            //    serializer.Deserialize(@".\AvalonDock.config");
         }
 
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
-            var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            serializer.Serialize(@".\AvalonDock.config");
+            //var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
+            //serializer.Serialize(@".\AvalonDock.config");
         }
 
 
@@ -89,22 +89,22 @@ namespace Orca.Modules.AvalonEdit.Views
 
         private void OnLoadLayout(object parameter)
         {
-            var layoutSerializer = new XmlLayoutSerializer(dockManager);
+            //var layoutSerializer = new XmlLayoutSerializer(dockManager);
             //Here I've implemented the LayoutSerializationCallback just to show
             // a way to feed layout desarialization with content loaded at runtime
             //Actually I could in this case let AvalonDock to attach the contents
             //from current layout using the content ids
             //LayoutSerializationCallback should anyway be handled to attach contents
             //not currently loaded
-            layoutSerializer.LayoutSerializationCallback += (s, e) =>
-            {
-                //if (e.Model.ContentId == FileStatsViewModel.ToolContentId)
-                //    e.Content = Workspace.This.FileStats;
-                //else if (!string.IsNullOrWhiteSpace(e.Model.ContentId) &&
-                //    File.Exists(e.Model.ContentId))
-                //    e.Content = Workspace.This.Open(e.Model.ContentId);
-            };
-            layoutSerializer.Deserialize(@".\AvalonDock.Layout.config");
+            //layoutSerializer.LayoutSerializationCallback += (s, e) =>
+            //{
+            //    //if (e.Model.ContentId == FileStatsViewModel.ToolContentId)
+            //    //    e.Content = Workspace.This.FileStats;
+            //    //else if (!string.IsNullOrWhiteSpace(e.Model.ContentId) &&
+            //    //    File.Exists(e.Model.ContentId))
+            //    //    e.Content = Workspace.This.Open(e.Model.ContentId);
+            //};
+            //layoutSerializer.Deserialize(@".\AvalonDock.Layout.config");
         }
 
         #endregion
@@ -131,8 +131,8 @@ namespace Orca.Modules.AvalonEdit.Views
 
         private void OnSaveLayout(object parameter)
         {
-            var layoutSerializer = new XmlLayoutSerializer(dockManager);
-            layoutSerializer.Serialize(@".\AvalonDock.Layout.config");
+            //var layoutSerializer = new XmlLayoutSerializer(dockManager);
+            //layoutSerializer.Serialize(@".\AvalonDock.Layout.config");
         }
 
         #endregion

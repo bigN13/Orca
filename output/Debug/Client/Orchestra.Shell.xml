@@ -224,6 +224,15 @@
             <param name="dockLocation">The dock location.</param>        
             <exception cref="T:System.ArgumentNullException">The <paramref name="viewModel"/> is <c>null</c>.</exception>
         </member>
+        <member name="M:Orchestra.Services.OrchestraService.ShowDocumentInNestedDockView(Catel.MVVM.IViewModel,Orchestra.Views.NestedDockingManager,System.Object,System.Nullable{Orchestra.Models.DockLocation})">
+            <summary>
+            Shows the document in nested dock view.
+            </summary>
+            <param name="viewModel">The view model.</param>
+            <param name="dockingManager">The docking manager.</param>
+            <param name="tag">The tag.</param>
+            <param name="dockLocation">The dock location.</param>
+        </member>
         <member name="M:Orchestra.Services.OrchestraService.CloseDocument(Catel.MVVM.IViewModel,System.Object)">
             <summary>
             Closes the document in the main shell with the specified view model.

@@ -30,46 +30,13 @@
         </Grid.RowDefinitions>
 
         <!--AnchorablesSource="{Binding Tools}" DocumentsSource="{Binding Files}"-->
-        <avalonDock:DockingManager x:Name="dockManager" Grid.Row="2">
-            <avalonDock:LayoutRoot>
-                <avalonDock:LayoutPanel Orientation="Horizontal">
-                    <avalonDock:LayoutAnchorablePaneGroup x:Name="LeftAnchorableGroup" DockWidth="250">
-                        <avalonDock:LayoutAnchorablePane>
-                            <avalonDock:LayoutAnchorable Title="Properties">
-                                <StackPanel Orientation="Vertical">
-                                    <ComboBox Name="propertyGridComboBox" DockPanel.Dock="Top"
-				          SelectedIndex="0">
-                                        <ComboBoxItem>TextEditor</ComboBoxItem>
-                                        <ComboBoxItem>TextArea</ComboBoxItem>
-                                        <ComboBoxItem>Options</ComboBoxItem>
-                                    </ComboBox>
-                                    <WindowsFormsHost>
-                                        <forms:PropertyGrid x:Name="propertyGrid"/>
-                                    </WindowsFormsHost>
-                                </StackPanel>
-                            </avalonDock:LayoutAnchorable>
-                        </avalonDock:LayoutAnchorablePane>
-                    </avalonDock:LayoutAnchorablePaneGroup>
-                    <avalonDock:LayoutPanel Orientation="Vertical">
-                        <avalonDock:LayoutPanel Orientation="Horizontal">
-                            <avalonDock:LayoutDocumentPaneGroup x:Name="leftDocumentGroup">
-                                <avalonDock:LayoutDocumentPane>
-                                    <avalonDock:LayoutDocument Title="My Doc">
-                                        <avalonEdit:TextEditor Grid.Row="2" SnapsToDevicePixels="True"           
-                                        Name="textEditor"
-                                        FontFamily="Consolas"
-                                        SyntaxHighlighting="C#"
-                                        FontSize="10pt"/>
-                                    </avalonDock:LayoutDocument>
-                                </avalonDock:LayoutDocumentPane>
-                            </avalonDock:LayoutDocumentPaneGroup>
-                        </avalonDock:LayoutPanel>
-                    </avalonDock:LayoutPanel>
-
-                </avalonDock:LayoutPanel>
-            </avalonDock:LayoutRoot>
-
-        </avalonDock:DockingManager>
+        <avalonEdit:TextEditor Grid.Row="2"
+            xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+            Name="textEditor"
+            FontFamily="Consolas"
+            SyntaxHighlighting="C#"
+            FontSize="10pt"/>
+       
 
     </Grid>
 

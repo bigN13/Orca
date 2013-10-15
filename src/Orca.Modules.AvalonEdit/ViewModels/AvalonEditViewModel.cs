@@ -57,11 +57,11 @@ namespace Orca.Modules.AvalonEdit.ViewModels
             _orchestraService = orchestraService;
             _messageMediator = messageMediator;
 
-            NewFile = new Command(NewFileExecute);
-            OpenFile = new Command(OpenFileExecute);
-            SaveFile = new Command(SaveFileExecute);
-            SaveAsFile = new Command(SaveAsFileExecute);
-            CloseFile = new Command(CloseFileExecute);
+            NewFileCommand = new Command(NewFileCommandExecute);
+            OpenFileCommand = new Command(OpenFileCommandExecute);
+            SaveFileCommand = new Command(SaveFileCommandExecute);
+            SaveAsFileCommand = new Command(SaveAsFileCommandExecute);
+            CloseFileCommand = new Command(CloseFileCommandExecute);
             //GoBack = new Command(OnGoBackExecute, OnGoBackCanExecute);
             //GoForward = new Command(OnGoForwardExecute, OnGoForwardCanExecute);
             //Browse = new Command(OnBrowseExecute, OnBrowseCanExecute);
@@ -77,14 +77,14 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         /// <summary>
         /// New File command.
         /// </summary>
-        public Command NewFile { get; private set; }
+        public Command NewFileCommand { get; private set; }
 
         int count = 1;
         /// <summary>
         /// Method to check whether the GoBack command can be executed.
         /// </summary>
         /// <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
-        private void NewFileExecute()
+        private void NewFileCommandExecute()
         {
             var orchestraService = GetService<IOrchestraService>();
             var typeFactory = TypeFactory.Default;
@@ -101,13 +101,13 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         /// <summary>
         /// New File command.
         /// </summary>
-        public Command OpenFile { get; private set; }
+        public Command OpenFileCommand { get; private set; }
 
         /// <summary>
         /// Method to check whether the GoBack command can be executed.
         /// </summary>
         /// <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
-        private void OpenFileExecute()
+        private void OpenFileCommandExecute()
         {
             // Calling Commands from 
             Workspace.This.OpenCommand.Execute(null);
@@ -120,13 +120,13 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         /// <summary>
         /// New File command.
         /// </summary>
-        public Command SaveFile { get; private set; }
+        public Command SaveFileCommand { get; private set; }
 
         /// <summary>
         /// Method to check whether the GoBack command can be executed.
         /// </summary>
         /// <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
-        private void SaveFileExecute()
+        private void SaveFileCommandExecute()
         {
             // Calling Commands from Workspace
             Workspace.This.ActiveDocument.SaveCommand.Execute(null);
@@ -135,17 +135,17 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         }
         #endregion
 
-        #region SaveAs Command
+        #region SaveAsFileCommand Command
         /// <summary>
         /// New File command.
         /// </summary>
-        public Command SaveAsFile { get; private set; }
+        public Command SaveAsFileCommand { get; private set; }
 
         /// <summary>
         /// Method to check whether the GoBack command can be executed.
         /// </summary>
         /// <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
-        private void SaveAsFileExecute()
+        private void SaveAsFileCommandExecute()
         {
             // Calling Commands from Workspace
             Workspace.This.ActiveDocument.SaveAsCommand.Execute(null);
@@ -156,13 +156,13 @@ namespace Orca.Modules.AvalonEdit.ViewModels
         /// <summary>
         /// New File command.
         /// </summary>
-        public Command CloseFile { get; private set; }
+        public Command CloseFileCommand { get; private set; }
 
         /// <summary>
         /// Method to check whether the GoBack command can be executed.
         /// </summary>
         /// <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
-        private void CloseFileExecute()
+        private void CloseFileCommandExecute()
         {
             // Calling Commands from Workspace
             Workspace.This.ActiveDocument.CloseCommand.Execute(null);

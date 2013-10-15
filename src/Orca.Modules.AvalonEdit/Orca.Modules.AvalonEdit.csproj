@@ -66,9 +66,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="Orchestra.Library">
-      <HintPath>..\packages\Orchestra.Library.0.40.1309291245-beta\lib\NET40\Orchestra.Library.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -113,6 +110,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\AvalonEditViewModel.cs" />
+    <Compile Include="ViewModels\PropertyViewModel.cs" />
     <Compile Include="ViewModels\FileStatsViewModel.cs" />
     <Compile Include="ViewModels\FileViewModel.cs" />
     <Compile Include="ViewModels\PaneViewModel.cs" />
@@ -127,6 +125,9 @@
     </Compile>
     <Compile Include="ViewModels\Base\ToolViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="Views\PropertyView.xaml.cs">
+      <DependentUpon>PropertyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pane\LayoutInitializer.cs" />
     <Compile Include="Views\Pane\PanesStyleSelector.cs" />
     <Compile Include="Views\Pane\PanesTemplateSelector.cs" />
@@ -137,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AvalonEditView2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PropertyView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -201,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\App\Edit_EndLine32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Orchestra\src\Orchestra.Library.NET45\Orchestra.Library.NET45.csproj">
+      <Project>{4529b8af-c5a4-429d-9da4-798bbca0ffd9}</Project>
+      <Name>Orchestra.Library.NET45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

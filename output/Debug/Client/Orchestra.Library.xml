@@ -97,17 +97,23 @@
             <param name="document">The document.</param>
             <param name="dockLocation">The <see cref="T:Orchestra.Models.DockLocation"/>.</param>
         </member>
-        <member name="M:Orchestra.AvalonDockHelper.CreateDocument(System.Windows.FrameworkElement,System.Object,System.Nullable{Orchestra.Models.DockLocation})">
+        <member name="M:Orchestra.AvalonDockHelper.CreateDocument(System.Windows.FrameworkElement,System.Object)">
             <summary>
             Creates the document.
             </summary>
             <param name="view">The view.</param>
-            <param name="tag">The tag.</param>
-            <param name="dockLocation">The dock location.</param>
+            <param name="tag">The tag.</param>        
             <returns>
             The created layout document.
             </returns>
             <exception cref="T:System.ArgumentNullException">The <paramref name="view"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Orchestra.AvalonDockHelper.AddNewDocumentToDockingManager(System.Nullable{Orchestra.Models.DockLocation},Xceed.Wpf.AvalonDock.Layout.LayoutAnchorable)">
+            <summary>
+            Adds the new document to docking manager.
+            </summary>
+            <param name="dockLocation">The dock location.</param>
+            <param name="layoutDocument">The layout document.</param>
         </member>
         <member name="M:Orchestra.AvalonDockHelper.WrapViewInLayoutDocument(System.Windows.FrameworkElement,System.Object,System.Boolean)">
             <summary>
@@ -1248,6 +1254,15 @@
             <param name="dockLocation">The dock location.</param>        
             <exception cref="T:System.ArgumentNullException">The <paramref name="viewModel"/> is <c>null</c>.</exception>
         </member>
+        <member name="M:Orchestra.Services.IOrchestraService.ShowDocumentInNestedDockView(Catel.MVVM.IViewModel,Orchestra.Views.NestedDockingManager,System.Object,System.Nullable{Orchestra.Models.DockLocation})">
+            <summary>
+            Shows the document in nested dock view.
+            </summary>
+            <param name="viewModel">The view model.</param>
+            <param name="dockingManager">The docking manager.</param>
+            <param name="tag">The tag.</param>
+            <param name="dockLocation">The dock location.</param>
+        </member>
         <member name="M:Orchestra.Services.IOrchestraService.CloseDocument(Catel.MVVM.IViewModel,System.Object)">
             <summary>
             Closes the document in the main shell with the specified view model.
@@ -1361,6 +1376,15 @@
             <c>true</c> if this instance is contextual view model; otherwise, <c>false</c>.
             </value>
         </member>
+        <member name="M:Orchestra.IContextualViewModelManager.IsNestedDockview(Catel.MVVM.IViewModel)">
+            <summary>
+            Determines whether type of the ViewModel belongs to a nested dock view.
+            </summary>
+            <param name="viewModel">The IViewModel.</param>
+            <returns>
+              <c>true</c> if the type of the ViewModel belongs to a nested dock view; otherwise, <c>false</c>.
+            </returns>
+        </member>
         <member name="M:Orchestra.IContextualViewModelManager.HasContextualRelationShip(Catel.MVVM.IViewModel,Catel.MVVM.IViewModel)">
             <summary>
             Determines whether this view model has a contextual relation ship with the specified view model.
@@ -1370,6 +1394,11 @@
             <returns>
               <c>true</c> if a contextual relation ship exists with the specified view model]; otherwise, <c>false</c>.
             </returns>
+        </member>
+        <member name="M:Orchestra.IContextualViewModelManager.RegisterNestedDockView``1">
+            <summary>
+            Registers the nested dock view.
+            </summary>
         </member>
         <member name="M:Orchestra.IContextualViewModelManager.RegisterOpenDocumentView(Orchestra.Views.IDocumentView)">
             <summary>
@@ -1382,14 +1411,23 @@
             <summary>
             Registers the context sensitive parent view.
             </summary>
-            <typeparam name="T"></typeparam>
-            <typeparam name="TP"></typeparam>
+            <typeparam name="TViewModel">The type of the view model.</typeparam>
+            <typeparam name="TContextSensitiveViewModel">The type of the context sensitive view model.</typeparam>
+            <param name="title">The title.</param>
+            <param name="dockLocation">The dock location.</param>
         </member>
         <member name="M:Orchestra.IContextualViewModelManager.UnregisterDocumentView(Orchestra.Views.IDocumentView)">
             <summary>
             Unregisters the contextual document view.
             </summary>
             <param name="documentView">The document view.</param>
+        </member>
+        <member name="M:Orchestra.IContextualViewModelManager.AddContextSensitiveViewsToNestedDockView(Catel.MVVM.IViewModel,Orchestra.Views.NestedDockingManager)">
+            <summary>
+            Adds the context sensitive views to nested dock view.
+            </summary>
+            <param name="viewModel">The view model.</param>
+            <param name="nestedDockingManager">The nested docking manager.</param>
         </member>
         <member name="M:Orchestra.IContextualViewModelManager.GetViewModelForContextSensitiveView``1">
             <summary>
@@ -1437,6 +1475,20 @@
             <param name="orchestraService">The <see cref="T:Orchestra.Services.IOrchestraService">orchestra service</see>.</param>
             <param name="viewModelFactory">The <see cref="T:Catel.MVVM.IViewModelFactory">orchestra service</see>..</param>
         </member>
+        <member name="M:Orchestra.ContextualViewModelManager.RegisterNestedDockView``1">
+            <summary>
+            Registers the nested dock view.
+            </summary>
+        </member>
+        <member name="M:Orchestra.ContextualViewModelManager.IsNestedDockview(Catel.MVVM.IViewModel)">
+            <summary>
+            Determines whether type of the ViewModel belongs to a nested dock view.
+            </summary>
+            <param name="viewModel">The IViewModel.</param>
+            <returns>
+              <c>true</c> if the type of the ViewModel belongs to a nested dock view; otherwise, <c>false</c>.
+            </returns>
+        </member>
         <member name="M:Orchestra.ContextualViewModelManager.RegisterContextualView``2(System.String,Orchestra.Models.DockLocation)">
             <summary>
             Registers 'contextual' view type, with the type of views that are context sensitive to this view.
@@ -1458,6 +1510,13 @@
             Unregisters the contextual document view.
             </summary>
             <param name="documentView">The document view.</param>
+        </member>
+        <member name="M:Orchestra.ContextualViewModelManager.AddContextSensitiveViewsToNestedDockView(Catel.MVVM.IViewModel,Orchestra.Views.NestedDockingManager)">
+            <summary>
+            Adds the context sensitive views to nested dock view.
+            </summary>
+            <param name="viewModel">The view model.</param>
+            <param name="nestedDockingManager">The nested docking manager.</param>
         </member>
         <member name="M:Orchestra.ContextualViewModelManager.HasContextSensitiveViewAssociated(Orchestra.Views.IDocumentView)">
             <summary>
@@ -1530,6 +1589,31 @@
         <member name="M:Orchestra.Views.DocumentView.CloseDocument">
             <summary>
             Closes the document.
+            </summary>
+        </member>
+        <member name="T:Orchestra.Views.NestedDockingManager">
+            <summary>
+            Interaction logic for NestedDockingManager.xaml
+            </summary>
+            <summary>
+            NestedDockingManager
+            </summary>
+        </member>
+        <member name="M:Orchestra.Views.NestedDockingManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Orchestra.Views.NestedDockingManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Orchestra.Views.NestedDockingManager.AddDocument(Xceed.Wpf.AvalonDock.Layout.LayoutAnchorable,System.Nullable{Orchestra.Models.DockLocation})">
+            <summary>
+            Adds the document as a tab to the NestedDocking view.
+            </summary>
+            <param name="documentView">The document view.</param>
+            <param name="dockLocation">The dock location.</param>
+        </member>
+        <member name="M:Orchestra.Views.NestedDockingManager.InitializeComponent">
+            <summary>
+            InitializeComponent
             </summary>
         </member>
     </members>

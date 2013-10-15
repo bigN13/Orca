@@ -66,12 +66,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="Orchestra.Library">
-      <HintPath>..\packages\Orchestra.Library.0.40.1309291245-beta\lib\NET45\Orchestra.Library.dll</HintPath>
-    </Reference>
-    <Reference Include="Orchestra.Shell">
-      <HintPath>..\packages\Orchestra.Shell.0.40.1309291245-beta\lib\NET45\Orchestra.Shell.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -149,8 +143,17 @@
   <ItemGroup>
     <Folder Include="Resources\Images\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Orchestra\src\Orchestra.Library.NET45\Orchestra.Library.NET45.csproj">
+      <Project>{4529b8af-c5a4-429d-9da4-798bbca0ffd9}</Project>
+      <Name>Orchestra.Library.NET45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Orchestra\src\Orchestra.Shell.NET45\Orchestra.Shell.NET45.csproj">
+      <Project>{a51adac8-e38e-4b63-9f5a-933898793e05}</Project>
+      <Name>Orchestra.Shell.NET45</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
