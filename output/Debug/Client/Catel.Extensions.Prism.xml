@@ -683,21 +683,6 @@
             The <paramref name="this"/> is <c>null</c>.
             </exception>
         </member>
-        <member name="T:Catel.IRegionManagerExtensions">
-            <summary>
-            The <see cref="T:Microsoft.Practices.Prism.Regions.IRegionManager"/> extensions methods.
-            </summary>
-        </member>
-        <member name="M:Catel.IRegionManagerExtensions.RegisterViewWithRegion``1(Microsoft.Practices.Prism.Regions.IRegionManager,System.String)">
-            <summary>
-            Registers the view with region.
-            </summary>
-            <typeparam name="TView">The type of the view.</typeparam>
-            <param name="regionManager">The region manager.</param>
-            <param name="regionName">Name of the region.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="regionManager"/> is <c>null</c>.</exception>
-            <exception cref="T:System.ArgumentException">The <paramref name="regionName"/> is <c>null</c>.</exception>
-        </member>
         <member name="T:Catel.IUIVisualizerServiceExtensions">
             <summary>
                 Extension methods for the <see cref="T:Catel.MVVM.Services.IUIVisualizerService"/>.

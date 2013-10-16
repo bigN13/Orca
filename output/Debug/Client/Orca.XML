@@ -6,7 +6,7 @@
     <members>
         <member name="T:Orca.App">
             <summary>
-            Interaction logic for App.xaml
+            Interaction logic for App.xaml.
             </summary>
             <summary>
             App
@@ -33,33 +33,33 @@
             Application Entry Point.
             </summary>
         </member>
-        <member name="T:Orchestra.Resources.Resources">
+        <member name="T:Orca.Resources.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:Orchestra.Resources.Resources.ResourceManager">
+        <member name="P:Orca.Resources.Resources.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:Orchestra.Resources.Resources.Culture">
+        <member name="P:Orca.Resources.Resources.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Orchestra.Resources.Resources.HelpButtonText">
+        <member name="P:Orca.Resources.Resources.HelpButtonText">
             <summary>
               Looks up a localized string similar to About.
             </summary>
         </member>
-        <member name="P:Orchestra.Resources.Resources.HelpGroupText">
+        <member name="P:Orca.Resources.Resources.HelpGroupText">
             <summary>
               Looks up a localized string similar to Help.
             </summary>
         </member>
-        <member name="P:Orchestra.Resources.Resources.HelpRibbonTabText">
+        <member name="P:Orca.Resources.Resources.HelpRibbonTabText">
             <summary>
               Looks up a localized string similar to Help.
             </summary>

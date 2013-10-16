@@ -1,0 +1,20 @@
+﻿Orca.Modules.Browser
+
+
+library
+C#
+.cs
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\
+Orca.Modules.Browser
+none
+false
+DEBUG;TRACE
+
+3537771114
+
+11712159268
+23623488855
+ResourceDictionary.xaml;Views\BrowserView.xaml;Views\PropertiesView.xaml;
+
+False
+

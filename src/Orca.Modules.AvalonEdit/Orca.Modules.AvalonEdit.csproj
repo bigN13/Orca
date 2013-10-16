@@ -38,26 +38,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Catel.Core">
-      <HintPath>..\packages\Catel.Core.3.6.1309271100-beta\lib\net45\Catel.Core.dll</HintPath>
+      <HintPath>..\..\lib\Catel.Core.3.6.1310102241-beta\lib\net45\Catel.Core.dll</HintPath>
     </Reference>
     <Reference Include="Catel.Extensions.Controls">
       <HintPath>..\packages\Catel.Extensions.Controls.3.6.1309271100-beta\lib\net45\Catel.Extensions.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Catel.Extensions.Prism">
-      <HintPath>..\packages\Catel.Extensions.Prism.3.6.1309271100-beta\lib\net45\Catel.Extensions.Prism.dll</HintPath>
+      <HintPath>..\..\lib\Catel.Extensions.Prism.3.6.1310102241-beta\lib\net45\Catel.Extensions.Prism.dll</HintPath>
     </Reference>
     <Reference Include="Catel.MVVM">
-      <HintPath>..\packages\Catel.MVVM.3.6.1309271100-beta\lib\net45\Catel.MVVM.dll</HintPath>
+      <HintPath>..\..\lib\Catel.MVVM.3.6.1310102241-beta\lib\net45\Catel.MVVM.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.AvalonEdit">
-      <HintPath>..\packages\AvalonEdit.4.3.1.9430\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+      <HintPath>..\..\..\Orca\src\packages\AvalonEdit.4.3.1.9430\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Prism">
-      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <HintPath>..\..\lib\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Prism.Interactivity">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
@@ -208,7 +208,7 @@
     <Resource Include="Resources\Images\App\Edit_EndLine32.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Orchestra\src\Orchestra.Library.NET45\Orchestra.Library.NET45.csproj">
+    <ProjectReference Include="..\Orchestra.Library.NET45\Orchestra.Library.NET45.csproj">
       <Project>{4529b8af-c5a4-429d-9da4-798bbca0ffd9}</Project>
       <Name>Orchestra.Library.NET45</Name>
     </ProjectReference>

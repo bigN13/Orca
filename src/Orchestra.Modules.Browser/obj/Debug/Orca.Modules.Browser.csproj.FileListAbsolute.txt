@@ -1,0 +1,26 @@
+F:\Έγγραφα\Git\Orca2\output\debug\Client\Modules\Orca.Modules.Browser.xml
+F:\Έγγραφα\Git\Orca2\output\debug\Client\Modules\Orca.Modules.Browser.dll
+F:\Έγγραφα\Git\Orca2\output\debug\Client\Modules\Orca.Modules.Browser.pdb
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\ResourceDictionary.baml
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.baml
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.baml
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.g.cs
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.g.cs
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser_MarkupCompile.cache
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.g.resources
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.dll
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.pdb
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.csprojResolveAssemblyReference.cache
+K:\Visual Studio 2012\GitHub\Orca2\output\debug\Client\Modules\Orca.Modules.Browser.xml
+K:\Visual Studio 2012\GitHub\Orca2\output\debug\Client\Modules\Orca.Modules.Browser.dll
+K:\Visual Studio 2012\GitHub\Orca2\output\debug\Client\Modules\Orca.Modules.Browser.pdb
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.csprojResolveAssemblyReference.cache
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\ResourceDictionary.baml
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.baml
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.baml
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.g.cs
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.g.cs
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser_MarkupCompile.cache
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.g.resources
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.dll
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orca.Modules.Browser.pdb

@@ -22,28 +22,6 @@
             </summary>
             <param name="collection">The collection.</param>
         </member>
-        <member name="M:Catel.Collections.FastObservableCollection`1.InsertItems(System.Collections.Generic.IEnumerable{`0},System.Int32)">
-            <summary>
-            Inserts the elements of the specified collection at the specified index.
-            </summary>
-            <param name="collection">The collection.</param>
-            <param name="index">The start index.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="collection"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Collections.FastObservableCollection`1.InsertItems(System.Collections.IEnumerable,System.Int32)">
-            <summary>
-            Inserts the elements of the specified collection at the specified index.
-            </summary>
-            <param name="collection">The collection.</param>
-            <param name="index">The start index.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="collection"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Collections.FastObservableCollection`1.Reset">
-            <summary>
-            Raises <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged" /> with 
-            <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" /> changed action.
-            </summary>
-        </member>
         <member name="M:Catel.Collections.FastObservableCollection`1.AddItems(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Adds the specified items to the collection without causing a change notification for all items.
@@ -120,22 +98,6 @@
             Raises the <c>ObservableCollection{T}.PropertyChanged</c> event, but also makes sure the event is dispatched to the UI thread.
             </summary>
             <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="P:Catel.Collections.FastObservableCollection`1.IsDirty">
-            <summary>
-            Gets or sets a value indicating whether change to the collection is made when
-            its notifications are suspended.
-            </summary>
-            <value><c>true</c> if this instance is has been changed while notifications are
-            suspended; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Catel.Collections.FastObservableCollection`1.NotificationsSuspended">
-            <summary>
-            Gets a value indicating whether change notifications are suspended.
-            </summary>
-            <value>
-            	<c>True</c> if notifications are suspended, otherwise, <c>false</c>.
-            </value>
         </member>
         <member name="P:Catel.Collections.FastObservableCollection`1.AutomaticallyDispatchChangeNotifications">
             <summary>

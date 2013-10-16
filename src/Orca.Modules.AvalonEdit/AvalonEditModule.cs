@@ -156,7 +156,7 @@ namespace Orca.Modules.AvalonEdit
 
             var contextualViewModelManager = GetService<IContextualViewModelManager>();
             //contextualViewModelManager.RegisterNestedDockView<AvalonEditViewModel>();
-            contextualViewModelManager.RegisterContextualView<AvalonEditViewModel, PropertyViewModel>("Properties", DockLocation.Left);
+            contextualViewModelManager.RegisterContextualView<AvalonEditViewModel, PropertyViewModel>("HEHEHEHEHEHEHEHHE", DockLocation.Right);
 
             //var userControl1ViewModel = typeFactory.CreateInstance<avalonViewModel>();
             //ribbonService.RegisterRibbonItem(

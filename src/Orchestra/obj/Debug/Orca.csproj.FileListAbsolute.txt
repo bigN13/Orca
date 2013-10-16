@@ -1,0 +1,34 @@
+F:\Έγγραφα\Git\Orca2\output\Debug\Client\Resources\Images\SplashScreen.png
+F:\Έγγραφα\Git\Orca2\output\Debug\Client\Orca.exe.config
+F:\Έγγραφα\Git\Orca2\output\Debug\Client\Orca.xml
+F:\Έγγραφα\Git\Orca2\output\Debug\Client\Orca.exe
+F:\Έγγραφα\Git\Orca2\output\Debug\Client\Orca.pdb
+F:\Έγγραφα\Git\Orca2\output\Debug\Client\de-DE\Orca.resources.dll
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\App.g.cs
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca_Content.g.cs
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca_MarkupCompile.cache
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.Properties.Resources.resources
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.Resources.Resources.resources
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.Resources.Resources.de-DE.resources
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.csproj.GenerateResource.Cache
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\de-DE\Orca.resources.dll
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.exe
+F:\Έγγραφα\Git\Orca2\src\Orchestra\obj\Debug\Orca.pdb
+K:\Visual Studio 2012\GitHub\Orca2\output\Debug\Client\Resources\Images\SplashScreen.png
+K:\Visual Studio 2012\GitHub\Orca2\output\Debug\Client\Orca.exe.config
+K:\Visual Studio 2012\GitHub\Orca2\output\Debug\Client\Orca.xml
+K:\Visual Studio 2012\GitHub\Orca2\output\Debug\Client\Orca.exe
+K:\Visual Studio 2012\GitHub\Orca2\output\Debug\Client\Orca.pdb
+K:\Visual Studio 2012\GitHub\Orca2\output\Debug\Client\de-DE\Orca.resources.dll
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.csprojResolveAssemblyReference.cache
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\App.g.cs
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca_Content.g.cs
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca_MarkupCompile.cache
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.Properties.Resources.resources
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.Resources.Resources.resources
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.Resources.Resources.de-DE.resources
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.csproj.GenerateResource.Cache
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\de-DE\Orca.resources.dll
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.exe
+K:\Visual Studio 2012\GitHub\Orca2\src\Orchestra\obj\Debug\Orca.pdb

@@ -1,0 +1,33 @@
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.csprojResolveAssemblyReference.cache
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\App.g.cs
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra_Content.g.cs
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra_MarkupCompile.cache
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.Properties.Resources.resources
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.Resources.Resources.resources
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.Resources.Resources.de-DE.resources
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.csproj.GenerateResource.Cache
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\App.g.cs
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra_Content.g.cs
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra_MarkupCompile.cache
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.Properties.Resources.resources
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.Resources.Resources.resources
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.Resources.Resources.de-DE.resources
+F:\Έγγραφα\Git\Orchestra\src\Orchestra\obj\Debug\Orchestra.csproj.GenerateResource.Cache
+F:\Έγγραφα\Git\Orchestra - Copy\output\Debug\Client\Resources\Images\SplashScreen.png
+F:\Έγγραφα\Git\Orchestra - Copy\output\Debug\Client\Orchestra.exe.config
+F:\Έγγραφα\Git\Orchestra - Copy\output\Debug\Client\Orchestra.XML
+F:\Έγγραφα\Git\Orchestra - Copy\output\Debug\Client\Orchestra.exe
+F:\Έγγραφα\Git\Orchestra - Copy\output\Debug\Client\Orchestra.pdb
+F:\Έγγραφα\Git\Orchestra - Copy\output\Debug\Client\de-DE\Orchestra.resources.dll
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\App.g.cs
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra_Content.g.cs
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra_MarkupCompile.cache
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.Properties.Resources.resources
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.Resources.Resources.resources
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.Resources.Resources.de-DE.resources
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.csproj.GenerateResource.Cache
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\de-DE\Orchestra.resources.dll
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.exe
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra\obj\Debug\Orchestra.pdb

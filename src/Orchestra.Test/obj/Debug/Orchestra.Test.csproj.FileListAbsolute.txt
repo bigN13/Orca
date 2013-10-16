@@ -1,0 +1,11 @@
+F:\Έγγραφα\Git\Orchestra - Copy\output\debug\test\Orchestra.Test.dll.config
+F:\Έγγραφα\Git\Orchestra - Copy\output\debug\test\Orchestra.Test.dll
+F:\Έγγραφα\Git\Orchestra - Copy\output\debug\test\Orchestra.Test.pdb
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Test\obj\Debug\Orchestra.Test.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Test\obj\Debug\Orchestra.Test.dll
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Test\obj\Debug\Orchestra.Test.pdb
+F:\Έγγραφα\Git\Orca2\output\debug\test\Orchestra.Test.dll.config
+F:\Έγγραφα\Git\Orca2\output\debug\test\Orchestra.Test.dll
+F:\Έγγραφα\Git\Orca2\output\debug\test\Orchestra.Test.pdb
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Test\obj\Debug\Orchestra.Test.dll
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Test\obj\Debug\Orchestra.Test.pdb

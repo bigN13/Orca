@@ -1,0 +1,31 @@
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra.Modules.Browser\obj\Debug\ResourceDictionary.baml
+\\Dine-pc\έγγραφα\Git\Orchestra\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser_MarkupCompile.cache
+F:\Έγγραφα\Git\Orchestra\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orchestra\src\Orchestra.Modules.Browser\obj\Debug\ResourceDictionary.baml
+F:\Έγγραφα\Git\Orchestra\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser_MarkupCompile.cache
+F:\Έγγραφα\Git\Orchestra - Copy\output\debug\Client\Modules\Orchestra.Modules.Browser.XML
+F:\Έγγραφα\Git\Orchestra - Copy\output\debug\Client\Modules\Orchestra.Modules.Browser.dll
+F:\Έγγραφα\Git\Orchestra - Copy\output\debug\Client\Modules\Orchestra.Modules.Browser.pdb
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\ResourceDictionary.baml
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.baml
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.baml
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.g.cs
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.g.cs
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser_MarkupCompile.cache
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.g.resources
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.dll
+F:\Έγγραφα\Git\Orchestra - Copy\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.pdb
+F:\Έγγραφα\Git\Orca2\output\debug\Client\Modules\Orchestra.Modules.Browser.XML
+F:\Έγγραφα\Git\Orca2\output\debug\Client\Modules\Orchestra.Modules.Browser.dll
+F:\Έγγραφα\Git\Orca2\output\debug\Client\Modules\Orchestra.Modules.Browser.pdb
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.csprojResolveAssemblyReference.cache
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\ResourceDictionary.baml
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.baml
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.baml
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\BrowserView.g.cs
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Views\PropertiesView.g.cs
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser_MarkupCompile.cache
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.g.resources
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.dll
+F:\Έγγραφα\Git\Orca2\src\Orchestra.Modules.Browser\obj\Debug\Orchestra.Modules.Browser.pdb

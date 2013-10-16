@@ -1042,11 +1042,6 @@
             The synchronization object.
             </summary>
         </member>
-        <member name="F:Catel.Caching.CacheStorage`2._syncObjs">
-            <summary>
-            The synchronization objects.
-            </summary>
-        </member>
         <member name="F:Catel.Caching.CacheStorage`2._timer">
             <summary>
             The timer that is being executed to invalidate the cache.
@@ -1145,17 +1140,6 @@
             <summary>
             Removes the expired items from the cache.
             </summary>
-        </member>
-        <member name="M:Catel.Caching.CacheStorage`2.GetLockByKey(`0)">
-            <summary>
-            Gets the lock by key
-            </summary>
-            <param name="key">
-            The key
-            </param>
-            <returns>
-            The lock object
-            </returns>
         </member>
         <member name="M:Catel.Caching.CacheStorage`2.OnTimerElapsed(System.Object)">
             <summary>
@@ -5839,18 +5823,6 @@
             </summary>
             <value>The property data.</value>
         </member>
-        <member name="P:Catel.Data.PropertyValue.GraphId">
-            <summary>
-            Gets or sets the graph identifier.
-            </summary>
-            <value>The graph identifier.</value>
-        </member>
-        <member name="P:Catel.Data.PropertyValue.GraphRefId">
-            <summary>
-            Gets or sets the graph reference identifier.
-            </summary>
-            <value>The graph reference identifier.</value>
-        </member>
         <member name="T:Catel.Data.SavableDataObjectBase`1">
             <summary>
             Abstract class that makes the <see cref="T:Catel.Data.DataObjectBase`1"/> serializable.
@@ -7644,14 +7616,6 @@
             Gets the exception handled.
             </summary>
         </member>
-        <member name="P:Catel.ExceptionHandling.IExceptionHandler.AllowedFrequency">
-            <summary>
-            Gets the allowed frequency.
-            </summary>
-            <value>
-            The allowed frequency.
-            </value>
-        </member>
         <member name="M:Catel.ExceptionHandling.ExceptionHandler.#ctor(System.Type,System.Action{System.Exception})">
             <summary>
             Initializes a new instance of the <see cref="T:Catel.ExceptionHandling.ExceptionHandler"/> class.
@@ -7659,7 +7623,7 @@
             <param name="exceptionType">Type of the exception.</param>
             <param name="action">The action to execute.</param>
             <exception cref="T:System.ArgumentNullException">The <paramref name="exceptionType"/> is <c>null</c>.</exception>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="exceptionType"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="action"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Catel.ExceptionHandling.ExceptionHandler.Handle(System.Exception)">
             <summary>
@@ -7672,14 +7636,6 @@
             <summary>
             Gets the exception handled.
             </summary>
-        </member>
-        <member name="P:Catel.ExceptionHandling.ExceptionHandler.AllowedFrequency">
-            <summary>
-            Gets the allowed frequency.
-            </summary>
-            <value>
-            The allowed frequency.
-            </value>
         </member>
         <member name="T:Catel.ExceptionHandling.ExceptionService">
             <summary>
@@ -7759,14 +7715,9 @@
             The log.
             </summary>
         </member>
-        <member name="F:Catel.ExceptionHandling.ExceptionService._default">
+        <member name="F:Catel.ExceptionHandling.ExceptionService.Instance">
             <summary>
             The static instance of the exception service.
-            </summary>
-        </member>
-        <member name="F:Catel.ExceptionHandling.ExceptionService._exceptionCounter">
-            <summary>
-            The _exception counts
             </summary>
         </member>
         <member name="F:Catel.ExceptionHandling.ExceptionService._exceptionHandlers">
@@ -7895,77 +7846,6 @@
             <param name="exception">The exception.</param>
             <returns>An XDocument of the Exception object.</returns>
             <exception cref="T:System.ArgumentNullException">The <param ref="exception"> is <c>null</c>.</param></exception>
-        </member>
-        <member name="T:Catel.ExceptionHandling.ExceptionHandlerExtensions">
-            <summary>
-            The IExceptionHandler extensions.
-            </summary>
-        </member>
-        <member name="M:Catel.ExceptionHandling.ExceptionHandlerExtensions.UsingTolerance(Catel.ExceptionHandling.IExceptionHandler,System.Int32,System.TimeSpan)">
-            <summary>
-            Usings the tolerance.
-            </summary>
-            <param name="exceptionHandler">The exception handler.</param>
-            <param name="numberOfTimes">The number of times.</param>
-            <param name="duration">The duration.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="exceptionHandler"/> is <c>null</c>.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="numberOfTimes"/> is out of range.</exception>
-        </member>
-        <member name="T:Catel.ExceptionHandling.Frequency">
-            <summary>
-            Represent the frequency tolerance implementation in exception handling
-            </summary>
-        </member>
-        <member name="T:Catel.ExceptionHandling.IFrequency">
-            <summary>
-            Represent the frequency tolerance interface in exception handling
-            </summary>
-        </member>
-        <member name="P:Catel.ExceptionHandling.IFrequency.NumberOfTimes">
-            <summary>
-            Gets the number of times.
-            </summary>
-            <value>
-            The number of times.
-            </value>
-        </member>
-        <member name="P:Catel.ExceptionHandling.IFrequency.Duration">
-            <summary>
-            Gets the duration.
-            </summary>
-            <value>
-            The duration.
-            </value>
-        </member>
-        <member name="M:Catel.ExceptionHandling.Frequency.#ctor(System.Int32,System.TimeSpan)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.ExceptionHandling.Frequency"/> class.
-            </summary>
-            <param name="numberOfTimes">The number of times.</param>
-            <param name="duration">The duration.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="numberOfTimes"/> is out of range.</exception>
-        </member>
-        <member name="M:Catel.ExceptionHandling.Frequency.ToString">
-            <summary>
-            The overrided ToString()
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:Catel.ExceptionHandling.Frequency.NumberOfTimes">
-            <summary>
-            Gets the number of times.
-            </summary>
-            <value>
-            The number of times.
-            </value>
-        </member>
-        <member name="P:Catel.ExceptionHandling.Frequency.Duration">
-            <summary>
-            Gets the duration.
-            </summary>
-            <value>
-            The duration.
-            </value>
         </member>
         <member name="T:Catel.NotSupportedInSilverlightException">
             <summary>
@@ -8593,17 +8473,7 @@
         </member>
         <member name="M:Catel.ObjectToStringHelper.ToTypeString(System.Object)">
             <summary>
-            Returns a <see cref="T:System.String"/> that represents the type name of the instance.
-            <para/>
-            If the <paramref name="instance"/> is <c>null</c>, this method will return "null". This
-            method is great when the value of a property must be logged.
-            </summary>
-            <param name="instance">The instance.</param>
-            <returns>A <see cref="T:System.String"/> that represents the type of the instance.</returns>
-        </member>
-        <member name="M:Catel.ObjectToStringHelper.ToFullTypeString(System.Object)">
-            <summary>
-            Returns a <see cref="T:System.String"/> that represents the full type name of the instance.
+            Returns a <see cref="T:System.String"/> that represents the type of the instance.
             <para/>
             If the <paramref name="instance"/> is <c>null</c>, this method will return "null". This
             method is great when the value of a property must be logged.
@@ -9455,24 +9325,6 @@
             <summary>
             IoC extensions for all objects.
             </summary>
-        </member>
-        <member name="M:Catel.IoC.ObjectExtensions.GetServiceLocator(System.Object)">
-            <summary>
-            Gets the <see cref="T:Catel.IoC.IServiceLocator"/> that was used to create the specified object.
-            <para/>
-            This is a convenience call that internally does this:
-            <para/>
-            <code>
-            <![CDATA[
-            var serviceLocator = DependencyResolverManager.Default;
-            var dependencyResolver = dependencyResolverManager.GetDependencyResolverForInstance(obj);
-            var serviceLocator = dependencyResolver.Resolve<IServiceLocator>();
-            ]]>
-            </code>
-            </summary>
-            <param name="obj">The object.</param>
-            <returns>The <see cref="T:Catel.IoC.IServiceLocator"/> used to create this object.</returns>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="obj"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Catel.IoC.ObjectExtensions.GetTypeFactory(System.Object)">
             <summary>
@@ -10693,34 +10545,6 @@
             </summary>
             <value>The type count.</value>
         </member>
-        <member name="T:Catel.IoC.IoCConfiguration">
-            <summary>
-            Contains configurations for the IoC implementation in Catel.
-            </summary>
-        </member>
-        <member name="M:Catel.IoC.IoCConfiguration.#cctor">
-            <summary>
-            Initializes static members of the <see cref="T:Catel.IoC.IoCConfiguration"/> class.
-            </summary>
-        </member>
-        <member name="P:Catel.IoC.IoCConfiguration.DefaultServiceLocator">
-            <summary>
-            Gets or sets the default service locator.
-            </summary>
-            <value>The default service locator.</value>
-        </member>
-        <member name="P:Catel.IoC.IoCConfiguration.DefaultDependencyResolver">
-            <summary>
-            Gets or sets the default dependency resolver.
-            </summary>
-            <value>The default dependency resolver.</value>
-        </member>
-        <member name="P:Catel.IoC.IoCConfiguration.DefaultTypeFactory">
-            <summary>
-            Gets or sets the default type factory.
-            </summary>
-            <value>The default type factory.</value>
-        </member>
         <member name="T:Catel.IoC.RegistrationInfo">
             <summary>
             Class containing the registration info about a particular type registered in the <see cref="T:Catel.IoC.ServiceLocator"/>.
@@ -10772,6 +10596,11 @@
         <member name="F:Catel.IoC.ServiceLocator.Log">
             <summary>
             The log.
+            </summary>
+        </member>
+        <member name="F:Catel.IoC.ServiceLocator._default">
+            <summary>
+            Singleton instance of the service locator.
             </summary>
         </member>
         <member name="F:Catel.IoC.ServiceLocator._autoRegistrationManager">
@@ -11079,7 +10908,7 @@
         </member>
         <member name="P:Catel.IoC.ServiceLocator.Default">
             <summary>
-            Gets or sets the instance of the default service locator. This property serves as as singleton.
+            Gets the instance of the default service locator. This property serves as as singleton.
             </summary>
             <value>The default instance.</value>
         </member>
@@ -11221,6 +11050,11 @@
         <member name="F:Catel.IoC.TypeFactory.Log">
             <summary>
             The log.
+            </summary>
+        </member>
+        <member name="F:Catel.IoC.TypeFactory._default">
+            <summary>
+            The default type factory for the default service locator.
             </summary>
         </member>
         <member name="F:Catel.IoC.TypeFactory._constructorCache">
@@ -11507,13 +11341,6 @@
         <member name="M:Catel.IoC.TypeRequestPath.MarkTypeAsNotCreated(Catel.IoC.TypeRequestInfo)">
             <summary>
             Marks the type as not created and removes all the history until this type from the request path.
-            </summary>
-            <param name="typeRequestInfo">The type request info.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="typeRequestInfo"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.IoC.TypeRequestPath.MarkTypeAsCreated(Catel.IoC.TypeRequestInfo)">
-            <summary>
-            Marks the type as created and removes all the history until this type from the request path.
             </summary>
             <param name="typeRequestInfo">The type request info.</param>
             <exception cref="T:System.ArgumentNullException">The <paramref name="typeRequestInfo"/> is <c>null</c>.</exception>
@@ -15230,20 +15057,20 @@
             <exception cref="T:System.ArgumentException">The <paramref name="assembly"/> is <c>null</c> or whitespace.</exception>
             <exception cref="T:System.ArgumentException">The <paramref name="type"/> is <c>null</c> or whitespace.</exception>
         </member>
-        <member name="M:Catel.Reflection.TypeHelper.FormatInnerTypes(System.String[],System.Boolean)">
+        <member name="M:Catel.Reflection.TypeHelper.FormatInnerTypes(System.String[])">
             <summary>
-            Formats multiple inner types into one string.
+              Formats multiple inner types into one string.
             </summary>
-            <param name="innerTypes">The inner types.</param>
-            <param name="stripAssemblies">if set to <c>true</c>, the assembly names will be stripped as well.</param>
-            <returns>string representing a combination of all inner types.</returns>
+            <param name = "innerTypes">The inner types.</param>
+            <returns>
+              string representing a combination of all inner types.
+            </returns>
         </member>
-        <member name="M:Catel.Reflection.TypeHelper.ConvertTypeToVersionIndependentType(System.String,System.Boolean)">
+        <member name="M:Catel.Reflection.TypeHelper.ConvertTypeToVersionIndependentType(System.String)">
             <summary>
             Converts a string representation of a type to a version independent type by removing the assembly version information.
             </summary>
             <param name="type">Type to convert.</param>
-            <param name="stripAssemblies">if set to <c>true</c>, the assembly names will be stripped as well.</param>
             <returns>String representing the type without version information.</returns>
             <exception cref="T:System.ArgumentException">The <paramref name="type"/> is <c>null</c> or whitespace.</exception>
         </member>
@@ -15255,20 +15082,14 @@
             <returns>Array of inner types.</returns>
             <exception cref="T:System.ArgumentException">The <paramref name="type"/> is <c>null</c> or whitespace.</exception>
         </member>
-        <member name="M:Catel.Reflection.TypeHelper.IsClassType(System.Type)">
-            <summary>
-            Determines whether the specified type is a class type, meaning it is not a value type but also not a string
-            or any of the primitive types in .NET.
-            </summary>
-            <param name="type">The type.</param>
-            <returns><c>true</c> if this type is a class type; otherwise, <c>false</c>.</returns>
-        </member>
         <member name="M:Catel.Reflection.TypeHelper.IsTypeNullable(System.Type)">
             <summary>
-            Returns whether a type is nullable or not.
+              Returns whether a type is nullable or not.
             </summary>
-            <param name="type">Type to check.</param>
-            <returns>True if the type is nullable, otherwise false.</returns>
+            <param name = "type">Type to check.</param>
+            <returns>
+              True if the type is nullable, otherwise false.
+            </returns>
         </member>
         <member name="M:Catel.Reflection.TypeHelper.AreObjectsEqual(System.Object,System.Object)">
             <summary>
@@ -15472,133 +15293,6 @@
             Occurs when an assembly is loaded into the currently <see cref="T:System.AppDomain"/>.
             </summary>
         </member>
-        <member name="T:Catel.Runtime.ReferenceEqualityComparer`1">
-            <summary>
-            Equality comparer for by reference.
-            </summary>
-            <typeparam name="TObject">The type of the object.</typeparam>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceEqualityComparer`1.Equals(`0,`0)">
-            <summary>
-            Determines whether the specified objects are equal.
-            </summary>
-            <param name="x">The first object to compare.</param>
-            <param name="y">The second object to compare.</param>
-            <returns>true if the specified objects are equal; otherwise, false.</returns>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceEqualityComparer`1.GetHashCode(`0)">
-            <summary>
-            Returns a hash code for this instance.
-            </summary>
-            <param name="obj">The <see cref="T:System.Object"/> for which a hash code is to be returned.</param>
-            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-            <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="T:Catel.Runtime.ReferenceInfo">
-            <summary>
-            Info about a reference which can provide a unique reference.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceInfo.#ctor(System.Object,System.Int32,System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.Runtime.ReferenceInfo"/> class.
-            </summary>
-            <param name="instance">The instance.</param>
-            <param name="id">The unique identifier.</param>
-            <param name="isFirstUsage">if set to <c>true</c>, this is the first usage of this instance.</param>
-        </member>
-        <member name="P:Catel.Runtime.ReferenceInfo.Instance">
-            <summary>
-            Gets the instance.
-            </summary>
-            <value>The instance.</value>
-        </member>
-        <member name="P:Catel.Runtime.ReferenceInfo.Id">
-            <summary>
-            Gets the unique identifier.
-            </summary>
-            <value>The unique identifier.</value>
-        </member>
-        <member name="P:Catel.Runtime.ReferenceInfo.IsFirstUsage">
-            <summary>
-            Gets a value indicating whether this is the first usage of this instance.
-            </summary>
-            <value><c>true</c> if this instance is the first usage of this instance; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="T:Catel.Runtime.ReferenceManager">
-            <summary>
-            Class responsible for managing identifiers for circular dependencies.
-            </summary>
-        </member>
-        <member name="F:Catel.Runtime.ReferenceManager.DefaultReferenceEqualityComparer">
-            <summary>
-            The default reference equality comparer.
-            </summary>
-        </member>
-        <member name="F:Catel.Runtime.ReferenceManager._referenceInfoByInstance">
-            <summary>
-            The dictionary containing the actualy information by object reference.
-            </summary>
-        </member>
-        <member name="F:Catel.Runtime.ReferenceManager._referenceInfoById">
-            <summary>
-            The dictionary containing the actualy information by id.
-            </summary>
-        </member>
-        <member name="F:Catel.Runtime.ReferenceManager._lock">
-            <summary>
-            The thread-lock object.
-            </summary>
-        </member>
-        <member name="F:Catel.Runtime.ReferenceManager._counter">
-            <summary>
-            The counter which is increased every time an instance is added.
-            </summary>
-        </member>
-        <member name="F:Catel.Runtime.ReferenceManager._usedIds">
-            <summary>
-            The hashset containing the used ids.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceManager.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.Runtime.ReferenceManager"/> class.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceManager.RegisterManually(System.Int32,System.Object)">
-            <summary>
-            Registers the specified instance manually.
-            </summary>
-            <param name="id">The unique identifier.</param>
-            <param name="instance">The instance.</param>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceManager.GetInfo(System.Object)">
-            <summary>
-            Gets the info for the specified instance.
-            </summary>
-            <param name="instance">The instance.</param>
-            <returns>The <see cref="T:Catel.Runtime.ReferenceInfo"/> or <c>null</c> if <paramref name="instance"/> is <c>null</c>.</returns>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceManager.GetInfoById(System.Int32)">
-            <summary>
-            Gets the information by the unique identifier.
-            </summary>
-            <param name="id">The unique identifier.</param>
-            <returns>The <see cref="T:Catel.Runtime.ReferenceInfo"/> or <c>null</c> if the id is not found.</returns>
-        </member>
-        <member name="M:Catel.Runtime.ReferenceManager.GetInfoAt(System.Int32)">
-            <summary>
-            Gets the info at the specified index.
-            </summary>
-            <param name="index">The index.</param>
-            <returns>The <see cref="T:Catel.Runtime.ReferenceInfo"/>.</returns>
-        </member>
-        <member name="P:Catel.Runtime.ReferenceManager.Count">
-            <summary>
-            Gets the number of items in the reference manager.
-            </summary>
-            <value>The number of items.</value>
-        </member>
         <member name="T:Catel.Runtime.Serialization.ExcludeFromSerializationAttribute">
             <summary>
             Attribute to define that a specific member must be excluded from the serialization by the serialization engine.
@@ -15608,23 +15302,6 @@
             <summary>
             Attribute to define that a specific member must be included in the serialization by the serialization engine.
             </summary>
-        </member>
-        <member name="T:Catel.Runtime.Serialization.SerializerModifierAttribute">
-            <summary>
-            Attribute to specify the serialization modifier attribute.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierAttribute.#ctor(System.Type)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.Runtime.Serialization.SerializerModifierAttribute"/> class.
-            </summary>
-            <param name="serializerModifierType">Type of the serializer modifier.</param>
-        </member>
-        <member name="P:Catel.Runtime.Serialization.SerializerModifierAttribute.SerializerModifierType">
-            <summary>
-            Gets the type of the serializer modifier.
-            </summary>
-            <value>The type of the serializer modifier.</value>
         </member>
         <member name="T:Catel.Runtime.Serialization.RedirectTypeAttribute">
             <summary>
@@ -15729,12 +15406,6 @@
             </summary>
             <value>The member values.</value>
         </member>
-        <member name="P:Catel.Runtime.Serialization.BinarySerializationContextInfo.PropertyValues">
-            <summary>
-            Gets the property values.
-            </summary>
-            <value>The property values.</value>
-        </member>
         <member name="T:Catel.Runtime.Serialization.BinarySerializer">
             <summary>
             The binary serializer.
@@ -15761,17 +15432,6 @@
             <summary>
             Interface definition to serialize the <see cref="T:Catel.Data.IModel"/>.
             </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.IModelBaseSerializer.Warmup(System.Collections.Generic.IEnumerable{System.Type},System.Int32)">
-            <summary>
-            Warms up the specified types. If the <paramref name="types"/> is <c>null</c>, all types known
-            in the <see cref="T:Catel.Reflection.TypeCache"/> deriving from the <see cref="T:Catel.Data.ModelBase"/> class will be initialized.
-            <para/>
-            Note that it is not required to call this, but it can help to prevent an additional performance
-            impact the first time a type is serialized.
-            </summary>
-            <param name="types">The types to warmp up. If <c>null</c>, all types will be initialized.</param>
-            <param name="typesPerThread">The types per thread. If <c>-1</c>, all types will be initialized on the same thread.</param>
         </member>
         <member name="M:Catel.Runtime.Serialization.IModelBaseSerializer.Serialize(Catel.Data.ModelBase,System.IO.Stream)">
             <summary>
@@ -15826,46 +15486,6 @@
             <param name="modelType">Type of the model.</param>
             <param name="stream">The stream.</param>
             <returns>The list of members that have been deserialized.</returns>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.Serializing">
-            <summary>
-            Occurs when an object is about to be serialized.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.SerializingMember">
-            <summary>
-            Occurs when an object is about to serialize a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.SerializedMember">
-            <summary>
-            Occurs when an object has just serialized a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.Serialized">
-            <summary>
-            Occurs when an object has just been serialized.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.Deserializing">
-            <summary>
-            Occurs when an object is about to be deserialized.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.DeserializingMember">
-            <summary>
-            Occurs when an object is about to deserialize a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.DeserializedMember">
-            <summary>
-            Occurs when an object has just deserialized a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.IModelBaseSerializer.Deserialized">
-            <summary>
-            Occurs when an object has just been deserialized.
-            </summary>
         </member>
         <member name="M:Catel.Runtime.Serialization.IModelBaseSerializer`1.Serialize(Catel.Data.ModelBase,`0)">
             <summary>
@@ -16012,29 +15632,6 @@
             <param name="membersToIgnore">The members to ignore.</param>
             <returns>The list of members to serialize.</returns>
             <exception cref="T:System.ArgumentNullException">The <paramref name="model"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerBase`1.Warmup(System.Collections.Generic.IEnumerable{System.Type},System.Int32)">
-            <summary>
-            Warms up the specified types. If the <paramref name="types"/> is <c>null</c>, all types known
-            in the <see cref="T:Catel.Reflection.TypeCache"/> will be initialized.
-            <para/>
-            Note that it is not required to call this, but it can help to prevent an additional performance
-            impact the first time a type is serialized.
-            </summary>
-            <param name="types">The types to warmp up. If <c>null</c>, all types will be initialized.</param>
-            <param name="typesPerThread">The types per thread. If <c>-1</c>, all types will be initialized on the same thread.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerBase`1.WarmupGroup(System.Collections.Generic.IEnumerable{System.Type})">
-            <summary>
-            Warms up the group.
-            </summary>
-            <param name="types">The types.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerBase`1.Warmup(System.Type)">
-            <summary>
-            Warms up the specified type.
-            </summary>
-            <param name="type">The type to warmup.</param>
         </member>
         <member name="M:Catel.Runtime.Serialization.SerializerBase`1.ShouldIgnoreMember(Catel.Data.ModelBase,System.String)">
             <summary>
@@ -16188,51 +15785,11 @@
             <param name="context">The context.</param>
             <param name="membersToSerialize">The members to serialize.</param>
         </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.Serializing">
-            <summary>
-            Occurs when an object is about to be serialized.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.SerializingMember">
-            <summary>
-            Occurs when an object is about to serialize a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.SerializedMember">
-            <summary>
-            Occurs when an object has just serialized a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.Serialized">
-            <summary>
-            Occurs when an object has just been serialized.
-            </summary>
-        </member>
         <member name="P:Catel.Runtime.Serialization.SerializerBase`1.SerializationManager">
             <summary>
             Gets the serialization manager.
             </summary>
             <value>The serialization manager.</value>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.Deserializing">
-            <summary>
-            Occurs when an object is about to be deserialized.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.DeserializingMember">
-            <summary>
-            Occurs when an object is about to deserialize a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.DeserializedMember">
-            <summary>
-            Occurs when an object has just deserialized a specific member.
-            </summary>
-        </member>
-        <member name="E:Catel.Runtime.Serialization.SerializerBase`1.Deserialized">
-            <summary>
-            Occurs when an object has just been deserialized.
-            </summary>
         </member>
         <member name="T:Catel.Runtime.Serialization.IBinarySerializer">
             <summary>
@@ -16244,7 +15801,7 @@
             The property values key.
             </summary>
         </member>
-        <member name="F:Catel.Runtime.Serialization.BinarySerializer.DeserializationBinder">
+        <member name="F:Catel.Runtime.Serialization.BinarySerializer._deserializationBinder">
             <summary>
             The deserialization binder with redirect support.
             </summary>
@@ -16284,12 +15841,6 @@
             <param name="model">The model.</param>
             <param name="stream">The stream.</param>
         </member>
-        <member name="M:Catel.Runtime.Serialization.BinarySerializer.Warmup(System.Type)">
-            <summary>
-            Warms up the specified type.
-            </summary>
-            <param name="type">The type to warmup.</param>
-        </member>
         <member name="M:Catel.Runtime.Serialization.BinarySerializer.SerializeMember(Catel.Runtime.Serialization.ISerializationContext{Catel.Runtime.Serialization.BinarySerializationContextInfo},Catel.Runtime.Serialization.MemberValue)">
             <summary>
             Serializes the member.
@@ -16324,12 +15875,6 @@
             <param name="memberValues">The member values.</param>
             <returns>The serialization context.</returns>
         </member>
-        <member name="M:Catel.Runtime.Serialization.BinarySerializer.BeforeSerialization(Catel.Runtime.Serialization.ISerializationContext{Catel.Runtime.Serialization.BinarySerializationContextInfo})">
-            <summary>
-            Called before the serializer starts serializing an object.
-            </summary>
-            <param name="context">The context.</param>
-        </member>
         <member name="M:Catel.Runtime.Serialization.BinarySerializer.BeforeDeserialization(Catel.Runtime.Serialization.ISerializationContext{Catel.Runtime.Serialization.BinarySerializationContextInfo})">
             <summary>
             Called before the serializer starts deserializing an object.
@@ -16348,6 +15893,7 @@
             </summary>
             <param name="context">The context.</param>
             <param name="stream">The stream.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:Catel.Runtime.Serialization.BinarySerializer.CreateBinaryFormatter(Catel.Runtime.Serialization.SerializationContextMode)">
             <summary>
@@ -16371,20 +15917,16 @@
             A dictionary of all <see cref="T:Catel.Runtime.Serialization.RedirectTypeAttribute"/> found.
             </summary>
         </member>
-        <member name="F:Catel.Runtime.Serialization.RedirectDeserializationBinder._typesPerThread">
-            <summary>
-            The number of types per thread to initialize. If <c>-1</c>, the types will be initialized in a single thread.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.RedirectDeserializationBinder.#ctor(System.Int32)">
+        <member name="M:Catel.Runtime.Serialization.RedirectDeserializationBinder.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Catel.Runtime.Serialization.RedirectDeserializationBinder"/> class.
             <para/>
             Creates a custom binder that redirects all the types to new types if required. All properties
             decorated with the <see cref="T:Catel.Runtime.Serialization.RedirectTypeAttribute"/> will be redirected.
             </summary>
-            <param name="typesPerThread">The number of types per thread to initialize. If <c>-1</c>, the types will be initialized in a single thread.</param>
-            <remarks>This constructor searches for attributes in a specific application domain.</remarks>
+            <remarks>
+            This constructor searches for attributes in a specific application domain.
+            </remarks>
         </member>
         <member name="M:Catel.Runtime.Serialization.RedirectDeserializationBinder.Initialize">
             <summary>
@@ -16425,52 +15967,6 @@
             <param name="type">Type to convert.</param>
             <returns>String representing the type that represents the redirected type.</returns>
         </member>
-        <member name="T:Catel.Runtime.Serialization.MemberSerializationEventArgs">
-            <summary>
-            Special member value serialization event args.
-            </summary>
-        </member>
-        <member name="T:Catel.Runtime.Serialization.SerializationEventArgs">
-            <summary>
-            The serialization event args.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializationEventArgs.#ctor(Catel.Runtime.Serialization.ISerializationContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.Runtime.Serialization.SerializationEventArgs"/> class.
-            </summary>
-            <param name="serializationContext">The serialization context.</param>
-        </member>
-        <member name="P:Catel.Runtime.Serialization.SerializationEventArgs.SerializationContext">
-            <summary>
-            Gets the serialization context.
-            </summary>
-            <value>The serialization context.</value>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.MemberSerializationEventArgs.#ctor(Catel.Runtime.Serialization.ISerializationContext,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.Runtime.Serialization.MemberSerializationEventArgs"/> class.
-            </summary>
-            <param name="serializationContext">The serialization context.</param>
-            <param name="memberValue">The member value.</param>
-        </member>
-        <member name="P:Catel.Runtime.Serialization.MemberSerializationEventArgs.MemberValue">
-            <summary>
-            Gets the member value.
-            </summary>
-            <value>The member value.</value>
-        </member>
-        <member name="T:Catel.Runtime.Serialization.SerializationContextHelper">
-            <summary>
-            Helper class for serialization.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializationContextHelper.GetSerializationReferenceManagerScopeName">
-            <summary>
-            Gets the name of the serialization reference manager scope.
-            </summary>
-            <returns>The name of the scope.</returns>
-        </member>
         <member name="T:Catel.Runtime.Serialization.SerializationContextMode">
             <summary>
             The mode in which a context is being used.
@@ -16509,12 +16005,6 @@
             </summary>
             <value>The context mode.</value>
         </member>
-        <member name="P:Catel.Runtime.Serialization.ISerializationContext.ReferenceManager">
-            <summary>
-            Gets the reference manager.
-            </summary>
-            <value>The reference manager.</value>
-        </member>
         <member name="T:Catel.Runtime.Serialization.ISerializationContext`1">
             <summary>
             Interface for the serialization context used to serialize and deserialize models.
@@ -16531,13 +16021,6 @@
             <summary>
             Manager which is responsible for discovering what fields and properties of an object should be serialized.
             </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializationManager.Warmup(System.Type)">
-            <summary>
-            Warmups the specified type by calling all the methods for the specified type.
-            </summary>
-            <param name="type">The type.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="type"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Catel.Runtime.Serialization.ISerializationManager.GetFieldsToSerialize(System.Type)">
             <summary>
@@ -16602,73 +16085,6 @@
             <param name="type">Type of the model.</param>
             <returns>A hash set containing the fields.</returns>
             <exception cref="T:System.ArgumentNullException">The <paramref name="type"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializationManager.GetSerializerModifiers(System.Type)">
-            <summary>
-            Gets the serializer modifiers for the specified type.
-            <para/>
-            Note that the order is important because the modifiers will be called in the returned order during serialization
-            and in reversed order during deserialization.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>An array containing the modifiers. Never <c>null</c>, but can be an empty array.</returns>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="type"/> is <c>null</c>.</exception>
-        </member>
-        <member name="T:Catel.Runtime.Serialization.ISerializerModifier">
-            <summary>
-            Allows modifications for a specific model for every supported serializer.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.ShouldIgnoreMember(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Determines whether the specified member should be ignored.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-            <param name="memberValue">The member value.</param>
-            <returns><c>true</c> if the property should be ignored, <c>false</c> otherwise.</returns>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.OnSerializing(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is about to be serialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.SerializeMember(Catel.Runtime.Serialization.ISerializationContext,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Allows the customization of the provided <see cref="T:Catel.Runtime.Serialization.MemberValue"/>.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="memberValue">The member value.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.OnSerialized(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is serialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.OnDeserializing(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is about to be deserialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.DeserializeMember(Catel.Runtime.Serialization.ISerializationContext,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Allows the customization of the provided <see cref="T:Catel.Runtime.Serialization.MemberValue"/>.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="memberValue">The member value.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.ISerializerModifier.OnDeserialized(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is deserialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
         </member>
         <member name="T:Catel.Runtime.Serialization.MemberMetadata">
             <summary>
@@ -16792,11 +16208,6 @@
             <exception cref="T:System.ArgumentNullException">The <paramref name="model"/> is <c>null</c>.</exception>
             <exception cref="T:System.ArgumentNullException">The <paramref name="context"/> is <c>null</c>.</exception>
         </member>
-        <member name="M:Catel.Runtime.Serialization.SerializationContext`1.Dispose">
-            <summary>
-            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </summary>
-        </member>
         <member name="P:Catel.Runtime.Serialization.SerializationContext`1.Model">
             <summary>
             Gets the model that needs serialization or deserialization.
@@ -16820,12 +16231,6 @@
             Gets the context.
             </summary>
             <value>The context.</value>
-        </member>
-        <member name="P:Catel.Runtime.Serialization.SerializationContext`1.ReferenceManager">
-            <summary>
-            Gets the reference manager.
-            </summary>
-            <value>The reference manager.</value>
         </member>
         <member name="T:Catel.Runtime.Serialization.SerializationFactory">
             <summary>
@@ -16854,13 +16259,6 @@
             <summary>
             The log.
             </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializationManager.Warmup(System.Type)">
-            <summary>
-            Warmups the specified type by calling all the methods for the specified type.
-            </summary>
-            <param name="type">The type.</param>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="type"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Catel.Runtime.Serialization.SerializationManager.GetFieldsToSerialize(System.Type)">
             <summary>
@@ -16925,24 +16323,6 @@
             <param name="type">Type of the model.</param>
             <returns>A hash set containing the fields.</returns>
             <exception cref="T:System.ArgumentNullException">The <paramref name="type"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializationManager.GetSerializerModifiers(System.Type)">
-            <summary>
-            Gets the serializer modifiers for the specified type.
-            <para/>
-            Note that the order is important because the modifiers will be called in the returned order during serialization
-            and in reversed order during deserialization.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>An array containing the modifiers. Never <c>null</c>, but can be an empty array.</returns>
-            <exception cref="T:System.ArgumentNullException">The <paramref name="type"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializationManager.FindSerializerModifiers(System.Type)">
-            <summary>
-            Finds the serializer modifiers.
-            </summary>
-            <param name="type">The type.</param>
-            <returns>The list of modifier attributes found.</returns>
         </member>
         <member name="T:Catel.Runtime.Serialization.SerializationObject">
             <summary>
@@ -17012,97 +16392,6 @@
             </summary>
             <value><c>true</c> if this instance is successful; otherwise, <c>false</c>.</value>
         </member>
-        <member name="T:Catel.Runtime.Serialization.SerializerModifierBase">
-            <summary>
-            Allows modifications for a specific model for every supported serializer.
-            </summary>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.ShouldIgnoreMember(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Determines whether the specified member should be ignored.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-            <param name="memberValue">The member value.</param>
-            <returns><c>true</c> if the property should be ignored, <c>false</c> otherwise.</returns>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.OnSerializing(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is about to be serialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.SerializeMember(Catel.Runtime.Serialization.ISerializationContext,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Allows the customization of the provided <see cref="T:Catel.Runtime.Serialization.MemberValue"/>.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="memberValue">The member value.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.OnSerialized(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is serialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.OnDeserializing(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is about to be deserialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.DeserializeMember(Catel.Runtime.Serialization.ISerializationContext,Catel.Runtime.Serialization.MemberValue)">
-            <summary>
-            Allows the customization of the provided <see cref="T:Catel.Runtime.Serialization.MemberValue"/>.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="memberValue">The member value.</param>
-            <returns>The final <see cref="T:Catel.Runtime.Serialization.MemberValue"/> that will be deserialized.</returns>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase.OnDeserialized(Catel.Runtime.Serialization.ISerializationContext,Catel.Data.IModel)">
-            <summary>
-            Called when the object is deserialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="T:Catel.Runtime.Serialization.SerializerModifierBase`1">
-            <summary>
-            Allows modifications for a specific model for every supported serializer.
-            </summary>
-            <typeparam name="TModel">The type of the model.</typeparam>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase`1.OnSerializing(Catel.Runtime.Serialization.ISerializationContext,`0)">
-            <summary>
-            Called when the object is about to be serialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase`1.OnSerialized(Catel.Runtime.Serialization.ISerializationContext,`0)">
-            <summary>
-            Called when the object is serialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase`1.OnDeserializing(Catel.Runtime.Serialization.ISerializationContext,`0)">
-            <summary>
-            Called when the object is about to be deserialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.SerializerModifierBase`1.OnDeserialized(Catel.Runtime.Serialization.ISerializationContext,`0)">
-            <summary>
-            Called when the object is deserialized.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="model">The model.</param>
-        </member>
         <member name="T:Catel.Runtime.Serialization.DataContractNameResolver">
             <summary>
             Default implementation of the <see cref="T:Catel.Runtime.Serialization.IDataContractNameResolver"/> in Catel. 
@@ -17169,7 +16458,7 @@
             The <see cref="T:Catel.Logging.ILog">log</see> object.
             </summary>
         </member>
-        <member name="F:Catel.Runtime.Serialization.DataContractSerializerFactory._dataContractSerializersCache">
+        <member name="F:Catel.Runtime.Serialization.DataContractSerializerFactory._dataContractSerializers">
             <summary>
             Cache for the <see cref="T:System.Runtime.Serialization.DataContractSerializer"/> per name.
             </summary>
@@ -17562,24 +16851,6 @@
             <exception cref="T:System.ArgumentNullException">The <paramref name="serializationManager"/> is <c>null</c>.</exception>
             <exception cref="T:System.ArgumentNullException">The <paramref name="dataContractSerializerFactory"/> is <c>null</c>.</exception>
         </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.Warmup(System.Type)">
-            <summary>
-            Warms up the specified type.
-            </summary>
-            <param name="type">The type to warmup.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.BeforeSerialization(Catel.Runtime.Serialization.ISerializationContext{System.Xml.Linq.XElement})">
-            <summary>
-            Called before the serializer starts serializing an object.
-            </summary>
-            <param name="context">The context.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.BeforeDeserialization(Catel.Runtime.Serialization.ISerializationContext{System.Xml.Linq.XElement})">
-            <summary>
-            Called before the serializer starts deserializing an object.
-            </summary>
-            <param name="context">The context.</param>
-        </member>
         <member name="M:Catel.Runtime.Serialization.XmlSerializer.SerializeMember(Catel.Runtime.Serialization.ISerializationContext{System.Xml.Linq.XElement},Catel.Runtime.Serialization.MemberValue)">
             <summary>
             Serializes the member.
@@ -17631,16 +16902,17 @@
             <param name="memberValue">The property data.</param>
             <returns>Object or <c>null</c>.</returns>
         </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.GetObjectFromXmlElement(Catel.Runtime.Serialization.ISerializationContext,System.Xml.Linq.XElement,Catel.Runtime.Serialization.MemberValue,System.Type)">
+        <member name="M:Catel.Runtime.Serialization.XmlSerializer.GetObjectFromXmlElement(System.Xml.Linq.XElement,Catel.Runtime.Serialization.MemberValue,System.Type)">
             <summary>
             Gets the object from XML element.
             </summary>
-            <param name="context">The context.</param>
+            <remarks>
+            Note that this method can cause exceptions. The caller will handle them.
+            </remarks>
             <param name="element">The element.</param>
             <param name="memberValue">The member value.</param>
             <param name="modelType">Type of the model.</param>
             <returns>Object or <c>null</c>.</returns>
-            <remarks>Note that this method can cause exceptions. The caller will handle them.</remarks>
         </member>
         <member name="M:Catel.Runtime.Serialization.XmlSerializer.WriteXmlAttribute(System.Xml.Linq.XElement,System.String,Catel.Runtime.Serialization.MemberValue)">
             <summary>
@@ -17650,87 +16922,32 @@
             <param name="attributeName">Name of the attribute.</param>
             <param name="memberValue">The member value.</param>
         </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.WriteXmlElement(Catel.Runtime.Serialization.ISerializationContext,System.Xml.Linq.XElement,System.String,Catel.Runtime.Serialization.MemberValue,System.Type)">
+        <member name="M:Catel.Runtime.Serialization.XmlSerializer.WriteXmlElement(System.Xml.Linq.XElement,System.String,Catel.Runtime.Serialization.MemberValue,System.Type)">
             <summary>
             Writes the XML element to the xml element.
             </summary>
-            <param name="context">The context.</param>
             <param name="element">The element.</param>
             <param name="elementName">Name of the element.</param>
             <param name="memberValue">The member value.</param>
             <param name="modelType">Type of the model.</param>
         </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.AddReferenceId(Catel.Runtime.Serialization.ISerializationContext,System.Xml.Linq.XElement,Catel.Data.IModel)">
-            <summary>
-            Adds the reference unique identifier as attribute.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="element">The element.</param>
-            <param name="model">The model.</param>
-        </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.EnsureNamespaceInXmlDocument(System.Xml.Linq.XElement)">
+        <member name="M:Catel.Runtime.Serialization.XmlSerializer.EnsureCatelNamespaceInXmlDocument(System.Xml.Linq.XElement)">
             <summary>
             Ensures the catel namespace in the xml document.
             </summary>
             <param name="element">The element.</param>
         </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.GetNamespacePrefix">
+        <member name="M:Catel.Runtime.Serialization.XmlSerializer.GetCatelNamespacePrefix">
             <summary>
-            Gets the namespace prefix.
+            Gets the catel namespace prefix.
             </summary>
             <returns>The namespace prefix..</returns>
         </member>
-        <member name="M:Catel.Runtime.Serialization.XmlSerializer.GetNamespaceUrl">
+        <member name="M:Catel.Runtime.Serialization.XmlSerializer.GetCatelNamespaceUrl">
             <summary>
-            Gets the namespace.
+            Gets the catel namespace.
             </summary>
             <returns>The namespace.</returns>
-        </member>
-        <member name="T:Catel.Scoping.ScopeManager`1">
-            <summary>
-            Custom scope manager to define a scope for a type.
-            </summary>
-            <typeparam name="T">The type to scope.</typeparam>
-        </member>
-        <member name="M:Catel.Scoping.ScopeManager`1.#ctor(System.String,System.Func{`0})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Catel.Scoping.ScopeManager`1"/> class.
-            </summary>
-            <param name="scopeName">Name of the scope.</param>
-            <param name="createScopeFunction">The create scope function.</param>
-        </member>
-        <member name="M:Catel.Scoping.ScopeManager`1.Dispose">
-            <summary>
-            Dispose object, dereferencing or disposing the context it is managing.
-            </summary>
-        </member>
-        <member name="M:Catel.Scoping.ScopeManager`1.ScopeExists(System.String)">
-            <summary>
-            Determines whether the specified scope exists.
-            </summary>
-            <param name="scopeName">Name of the scope.</param>
-            <returns><c>true</c> if the scope exists, <c>false</c> otherwise.</returns>
-            <exception cref="T:System.ArgumentException">The <paramref name="scopeName"/> is <c>null</c>.</exception>
-        </member>
-        <member name="M:Catel.Scoping.ScopeManager`1.GetScopeManager(System.String,System.Func{`0})">
-            <summary>
-            Gets the ContextManager object for the specified database.
-            </summary>
-            <param name="scopeName">Name of the scope.</param>
-            <param name="createScopeFunction">The create scope function. Can be <c>null</c>.</param>
-            <returns>The <see cref="T:Catel.Scoping.ScopeManager`1"/>.</returns>
-            <exception cref="T:System.ArgumentException">The <paramref name="scopeName"/> is <c>null</c>.</exception>
-        </member>
-        <member name="P:Catel.Scoping.ScopeManager`1.ScopeObject">
-            <summary>
-            Gets the scope object.
-            </summary>
-        </member>
-        <member name="P:Catel.Scoping.ScopeManager`1.RefCount">
-            <summary>
-            Gets the current reference count for this
-            object.
-            </summary>
         </member>
         <member name="T:Catel.Services.IService">
             <summary>
@@ -17809,12 +17026,6 @@
             Helper class for thread methods.
             </summary>
         </member>
-        <member name="M:Catel.ThreadHelper.GetCurrentThreadId">
-            <summary>
-            Gets the current thread identifier.
-            </summary>
-            <returns>System.String.</returns>
-        </member>
         <member name="M:Catel.ThreadHelper.Sleep(System.Int32)">
             <summary>
             Lets the current execution thread sleep for the specified milliseconds.
@@ -17822,12 +17033,6 @@
             In WinRT, this method uses the Task to delay.
             </summary>
             <param name="millisecondsTimeout">The milliseconds timeout.</param>
-        </member>
-        <member name="M:Catel.ThreadHelper.SpinWait(System.Int32)">
-            <summary>
-            Causes a thread to wait the number of times defined by the iterations parameter.
-            </summary>
-            <param name="iterations">The number of iterations.</param>
         </member>
         <member name="T:Catel.Threading.SynchronizationContext">
             <summary>
@@ -17846,42 +17051,76 @@
             <summary>
             This method execute the <paramref name="code"/> into a exclusive lock.
             </summary>
-            <param name="code">The code to be executed.</param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="code"/> is <c>null</c>.</exception>
-            <remarks>If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released.</remarks>
+            <remarks>
+            If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released. 
+            </remarks>
+            <param name="code">
+            The code to be executed.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="code"/> is <c>null</c>.
+            </exception>
         </member>
         <member name="M:Catel.Threading.SynchronizationContext.Enqueue(System.Action,System.ComponentModel.RunWorkerCompletedEventHandler)">
             <summary>
             This method enqueue the execution of the <paramref name="code"/> into a exclusive lock.
             </summary>
-            <param name="code">The code to be executed.</param>
-            <param name="runWorkerCompletedEventHandler">Method that will handle the RunWorkerCompleted event of a <see cref="T:System.ComponentModel.BackgroundWorker"/> class.
-            It occurs when the background operation has completed, has been canceled, or has raised an exception.</param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="code"/> is <c>null</c>.</exception>
-            <remarks>If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released, without blocking the current thread.
-            This method relay the execution of the code into an instance of <see cref="T:System.ComponentModel.BackgroundWorker"/>.</remarks>
+            <remarks>
+            If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released, without blocking the current thread.
+            This method relay the execution of the code into an instance of <see cref="T:System.ComponentModel.BackgroundWorker"/>.
+            </remarks>
+            <param name="code">
+            The code to be executed.
+            </param>
+            <param name="runWorkerCompletedEventHandler">
+            Method that will handle the RunWorkerCompleted event of a <see cref="T:System.ComponentModel.BackgroundWorker"/> class. 
+             It occurs when the background operation has completed, has been canceled, or has raised an exception. 
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="code"/> is <c>null</c>.
+            </exception>
         </member>
         <member name="M:Catel.Threading.SynchronizationContext.Enqueue``1(System.Func{``0},System.ComponentModel.RunWorkerCompletedEventHandler)">
             <summary>
             This method execute the <paramref name="code"/> into a exclusive lock and returns a value.
             </summary>
-            <typeparam name="T">The result type.</typeparam>
-            <param name="code">The code to be executed.</param>
-            <param name="runWorkerCompletedEventHandler">Method that will handle the RunWorkerCompleted event of a <see cref="T:System.ComponentModel.BackgroundWorker"/> class.
-            It occurs when the background operation has completed, has been canceled, or has raised an exception.</param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="code"/> is <c>null</c>.</exception>
-            <remarks>If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released, blocking the current thread.
-            This method relay the execution of the code into an instance of <see cref="T:System.ComponentModel.BackgroundWorker"/>.</remarks>
+            <remarks>
+            If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released, blocking the current thread. 
+            This method relay the execution of the code into an instance of <see cref="T:System.ComponentModel.BackgroundWorker"/>.
+            </remarks>
+            <param name="code">
+            The code to be executed.
+            </param>
+            <param name="runWorkerCompletedEventHandler">
+            Method that will handle the RunWorkerCompleted event of a <see cref="T:System.ComponentModel.BackgroundWorker"/> class. 
+             It occurs when the background operation has completed, has been canceled, or has raised an exception. 
+            </param>
+            <typeparam name="T">
+            The result type.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="code"/> is <c>null</c>.
+            </exception>
         </member>
         <member name="M:Catel.Threading.SynchronizationContext.Execute``1(System.Func{``0})">
             <summary>
             This method execute the <paramref name="code"/> into a exclusive lock and returns a value.
             </summary>
-            <typeparam name="T">The result type.</typeparam>
-            <param name="code">The code to be executed.</param>
-            <returns>The result of execute the code.</returns>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="code"/> is <c>null</c>.</exception>
-            <remarks>If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released, blocking the current thread.</remarks>
+            <remarks>
+            If the lock is acquired before call this method, then the <paramref name="code"/> execution is delayed until the lock would released, blocking the current thread. 
+            </remarks>
+            <param name="code">
+            The code to be executed.
+            </param>
+            <typeparam name="T">
+            The result type.
+            </typeparam>
+            <returns>
+            The result of execute the code.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="code"/> is <c>null</c>.
+            </exception>
         </member>
         <member name="M:Catel.Threading.SynchronizationContext.Acquire">
             <summary>
