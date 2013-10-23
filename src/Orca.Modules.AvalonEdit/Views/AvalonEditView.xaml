@@ -15,9 +15,13 @@
         xmlns:conv="clr-namespace:Orca.Modules.AvalonEdit.Converter"
         xmlns:pane="clr-namespace:Orca.Modules.AvalonEdit.Views.Pane"
         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:ViewModels="clr-namespace:Orca.Modules.AvalonEdit.ViewModels"
                         
         mc:Ignorable="d" 
-        d:DesignHeight="300" d:DesignWidth="347">
+        d:DataContext="{d:DesignInstance ViewModels:AvalonEditViewModel}"
+        d:DesignHeight="300" 
+        d:DesignWidth="347">
+    
     <orchestra:DocumentView.Resources>
         <conv:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
         <avalonDock:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
@@ -31,13 +35,17 @@
 
         <!--AnchorablesSource="{Binding Tools}" DocumentsSource="{Binding Files}"-->
         <avalonEdit:TextEditor Grid.Row="2"
-            xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+            Document="{Binding Document, UpdateSourceTrigger=PropertyChanged}"
+            SyntaxHighlighting="{Binding HighlightDef}"
+            IsReadOnly="{Binding IsReadOnly}"
+			IsModified="{Binding Path=IsDirty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            WordWrap="{Binding Path=WordWrap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            ShowLineNumbers="{Binding Path=ShowLineNumbers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Options="{Binding TextOptions}"
+                               
             Name="textEditor"
             FontFamily="Consolas"
-            SyntaxHighlighting="C#"
-            FontSize="10pt"/>
-       
-
+            FontSize="10pt"/>   
     </Grid>
 
 </orchestra:DocumentView>

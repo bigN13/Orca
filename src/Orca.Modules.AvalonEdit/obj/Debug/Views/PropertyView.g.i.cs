@@ -17,6 +17,7 @@ using Catel.Windows.Data;
 using Catel.Windows.Data.Converters;
 using Catel.Windows.Interactivity;
 using Catel.Windows.Markup;
+using Catel.Windows.Media.Effects;
 using Orchestra.Layout;
 using Orchestra.Views;
 using System;

@@ -1,4 +1,6 @@
-﻿using ICSharpCode.AvalonEdit.CodeCompletion;
+﻿using Catel.IoC;
+using Catel.Messaging;
+using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Folding;
 using ICSharpCode.AvalonEdit.Highlighting;
 using Microsoft.Win32;
@@ -36,6 +38,7 @@ namespace Orca.Modules.AvalonEdit.Views
         {
             InitializeComponent();
 
+            //this.DataContext = AvalonEditModule;
             //this.DataContext = Workspace.This;
 
             //this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
@@ -63,9 +66,6 @@ namespace Orca.Modules.AvalonEdit.Views
             //var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
             //serializer.Serialize(@".\AvalonDock.config");
         }
-
-
-
 
         #region LoadLayoutCommand
         RelayCommand _loadLayoutCommand = null;

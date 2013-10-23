@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Orca.Modules.TextEditor</name>
+    </assembly>
+    <members>
+        <member name="F:Orca.Modules.TextEditor.TextEditorModule.Name">
+            <summary>
+            The module name.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.#ctor(Orchestra.Services.IOrchestraService)">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.OnInitialized">
+            <summary>
+            Called when the module is initialized.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.InitializeRibbon(Orchestra.Services.IRibbonService)">
+            <summary>
+            Initializes the ribbon.
+            <para />
+            Use this method to hook up views to ribbon items.
+            </summary>
+            <param name="ribbonService">The ribbon service.</param>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.NewDocumentCommandCanExecute">
+            <summary>
+            Method to check whether the New command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.NewDocumentCommandExecute">
+            <summary>
+            Method to invoke when the New command is executed.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.OpenDocumentCommandCanExecute">
+            <summary>
+            Method to check whether the New command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.TextEditorModule.OpenDocumentCommandExecute">
+            <summary>
+            Method to invoke when the New command is executed.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.#ctor(Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel"/> class.
+            </summary>
+            <param name="messageService">The message service.</param>
+            <param name="orchestraService">The orchestra service.</param>
+            <param name="messageMediator">The message mediator.</param>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.#ctor(System.String,Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel"/> class.
+            </summary>
+            <param name="messageService">The message service.</param>
+            <param name="orchestraService">The orchestra service.</param>
+            <param name="messageMediator">The message mediator.</param>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnShowLineNumbersCommandCanExecute">
+            <summary>
+            Method to check whether the ShowLineNumbers command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnShowLineNumbersCommandExecute">
+            <summary>
+            Method to invoke when the ShowLineNumbers command is executed.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnWordWrapCommandCanExecute">
+            <summary>
+            Method to check whether the WordWrap command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnWordWrapCommandExecute">
+            <summary>
+            Method to invoke when the WordWrap command is executed.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnEndLineCommandCanExecute">
+            <summary>
+            Method to check whether the EndLineCommand command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnEndLineCommandExecute">
+            <summary>
+            Method to invoke when the EndLineCommand command is executed.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnShowSpacesCommandCanExecute">
+            <summary>
+            Method to check whether the EndLineCommand command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnShowSpacesCommandExecute">
+            <summary>
+            Method to invoke when the EndLineCommand command is executed.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnShowTabCommandCanExecute">
+            <summary>
+            Method to check whether the EndLineCommand command can be executed.
+            </summary>
+            <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.OnShowTabCommandExecute">
+            <summary>
+            Method to invoke when the EndLineCommand command is executed.
+            </summary>
+        </member>
+        <member name="P:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.ShowLineNumbersCommand">
+            <summary>
+            Gets the ShowLineNumbers command.
+            </summary>
+        </member>
+        <member name="P:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.WordWrapCommand">
+            <summary>
+            Gets the WordWrap command.
+            </summary>
+        </member>
+        <member name="P:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.EndLineCommand">
+            <summary>
+            Gets the EndLine command.
+            </summary>
+        </member>
+        <member name="P:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.ShowSpacesCommand">
+            <summary>
+            Gets the EndLine command.
+            </summary>
+        </member>
+        <member name="P:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.ShowTabCommand">
+            <summary>
+            Gets the EndLine command.
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.PropertyViewModel.#ctor(System.String,Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="!:AvalonEditViewModel"/> class.
+            </summary>
+            <param name="title">The title.</param>
+            <param name="messageService">The message service.</param>
+            <param name="orchestraService">The orchestra service.</param>
+            <param name="messageMediator">The message mediator.</param>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.ViewModels.PropertyViewModel.#ctor(Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="!:AvalonEditViewModel"/> class.
+            </summary>
+            <param name="messageService">The message service.</param>
+            <param name="orchestraService">The orchestra service.</param>
+            <param name="messageMediator">The message mediator.</param>
+        </member>
+        <member name="T:Orca.Modules.TextEditor.Views.TextEditorView">
+            <summary>
+            Interaction logic for AvalonEditView.xaml
+            </summary>
+            <summary>
+            TextEditorView
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.Views.TextEditorView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Orca.Modules.TextEditor.Views.PropertyView">
+            <summary>
+            Interaction logic for AvalonEditView.xaml
+            </summary>
+            <summary>
+            PropertyView
+            </summary>
+        </member>
+        <member name="M:Orca.Modules.TextEditor.Views.PropertyView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

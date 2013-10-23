@@ -4,7 +4,7 @@
 library
 C#
 .cs
-K:\Visual Studio 2012\GitHub\Orca2\src\Orca.Modules.AvalonEdit\obj\Debug\
+K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\
 Orca.Modules.AvalonEdit
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 3-2094760761
 
 20-317651528
-27801002922
+30-1855662916
 Views\AvalonEditView.xaml;Views\AvalonEditView2.xaml;Views\PropertyView.xaml;
 
-False
+True
 

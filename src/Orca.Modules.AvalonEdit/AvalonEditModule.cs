@@ -13,13 +13,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Orchestra;
 using Catel;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Orca.Modules.AvalonEdit
 {
     /// <summary>
     /// The module.
     /// </summary>
-    public class AvalonEditModule : Orchestra.Modules.ModuleBase
+    public class AvalonEditModule : Orchestra.Modules.ModuleBase, INotifyPropertyChanged
     {
         #region Constants
         /// <summary>
@@ -48,6 +50,11 @@ namespace Orca.Modules.AvalonEdit
         /// </summary>
         protected override void OnInitialized()
         {
+            NewFileCommand = new Command(NewFileCommandExecute);
+            //OpenFileCommand = new Command(OpenFileCommandExecute);
+            //SaveFileCommand = new Command(SaveFileCommandExecute);
+            //SaveAsFileCommand = new Command(SaveAsFileCommandExecute);
+            //CloseFileCommand = new Command(CloseFileCommandExecute);
             //var orchestraService = GetService<IOrchestraService>();
             //orchestraService.ShowDocument<PropertyViewModel>();
 
@@ -76,10 +83,16 @@ namespace Orca.Modules.AvalonEdit
 
             //Home ribbon
             ribbonService.RegisterRibbonItem(
-                new RibbonButton(HomeRibbonTabName, ModuleName, "New", new Command(() => _orchestraService.ShowDocument<AvalonEditViewModel>())) 
-                {
-                    ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" 
-                });
+               new RibbonButton(HomeRibbonTabName, ModuleName, "New", NewFileCommand )
+               {
+                   ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png"
+               });
+
+            //ribbonService.RegisterRibbonItem(
+            //    new RibbonButton(HomeRibbonTabName, ModuleName, "New", new Command(() => _orchestraService.ShowDocument<AvalonEditViewModel>())) 
+            //    {
+            //        ItemImage = "/Orca.Modules.AvalonEdit;component/Resources/Images/App/File_New32.png" 
+            //    });
 
             #region File Buttons
 
@@ -156,7 +169,7 @@ namespace Orca.Modules.AvalonEdit
 
             var contextualViewModelManager = GetService<IContextualViewModelManager>();
             //contextualViewModelManager.RegisterNestedDockView<AvalonEditViewModel>();
-            contextualViewModelManager.RegisterContextualView<AvalonEditViewModel, PropertyViewModel>("HEHEHEHEHEHEHEHHE", DockLocation.Right);
+            contextualViewModelManager.RegisterContextualView<AvalonEditViewModel, PropertyViewModel>("Properties", DockLocation.Right);
 
             //var userControl1ViewModel = typeFactory.CreateInstance<avalonViewModel>();
             //ribbonService.RegisterRibbonItem(
@@ -168,12 +181,101 @@ namespace Orca.Modules.AvalonEdit
             //var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<AvalonEditViewModel>("Orca Avalon Editor");
             //orchestraService.ShowDocument(orcaViewModel, "Orca Avalon Editor");
 
-
-
-
-
-
-
         }
+
+
+
+
+        #region Workspace
+        ObservableCollection<FileViewModel> _files = new ObservableCollection<FileViewModel>();
+        ReadOnlyObservableCollection<FileViewModel> _readonyFiles = null;
+
+        public ReadOnlyObservableCollection<FileViewModel> Files
+        {
+            get
+            {
+                if (_readonyFiles == null)
+                    _readonyFiles = new ReadOnlyObservableCollection<FileViewModel>(_files);
+
+                return _readonyFiles;
+            }
+        }
+
+
+        //FileStatsViewModel _fileStats = null;
+        //public FileStatsViewModel FileStats
+        //{
+        //    get
+        //    {
+        //        if (_fileStats == null)
+        //            _fileStats = new FileStatsViewModel();
+
+        //        return _fileStats;
+        //    }
+        //}
+
+
+        #region New Command
+        /// <summary>
+        /// New File command.
+        /// </summary>
+        public Command NewFileCommand { get; private set; }
+
+        int count = 1;
+        /// <summary>
+        /// Method to check whether the GoBack command can be executed.
+        /// </summary>
+        /// <returns><c>true</c> if the command can be executed; otherwise <c>false</c></returns>
+        private void NewFileCommandExecute()
+        {
+            var orchestraService = GetService<IOrchestraService>();
+            var typeFactory = TypeFactory.Default;
+            var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<AvalonEditViewModel>("Sheet " + count.ToString());
+            orchestraService.ShowDocument(orcaViewModel, "Sheet " + count.ToString());
+
+            count++;
+
+            //Workspace.This.NewCommand.Execute(null);
+        }
+        #endregion
+
+        #region ActiveDocument
+
+        private FileViewModel _activeDocument = null;
+        public FileViewModel ActiveDocument
+        {
+            get { return _activeDocument; }
+            set
+            {
+                if (_activeDocument != value)
+                {
+                    _activeDocument = value;
+                    RaisePropertyChanged("ActiveDocument");
+                    if (ActiveDocumentChanged != null)
+                        ActiveDocumentChanged(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public event EventHandler ActiveDocumentChanged;
+
+        #endregion
+
+     
+
+
+        #endregion
+
+
+        protected virtual void RaisePropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
     }
 }

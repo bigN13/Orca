@@ -41,7 +41,7 @@
       <HintPath>..\..\lib\Catel.Core.3.6.1310102241-beta\lib\net45\Catel.Core.dll</HintPath>
     </Reference>
     <Reference Include="Catel.Extensions.Controls">
-      <HintPath>..\packages\Catel.Extensions.Controls.3.6.1309271100-beta\lib\net45\Catel.Extensions.Controls.dll</HintPath>
+      <HintPath>..\..\lib\Catel.Extensions.Controls.3.6.1310102241-beta\lib\net45\Catel.Extensions.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Catel.Extensions.Prism">
       <HintPath>..\..\lib\Catel.Extensions.Prism.3.6.1310102241-beta\lib\net45\Catel.Extensions.Prism.dll</HintPath>
@@ -60,11 +60,11 @@
       <HintPath>..\..\lib\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Prism.Interactivity">
-      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <HintPath>..\..\lib\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59d6d24383174ac4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <HintPath>..\..\lib\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
