@@ -49,7 +49,11 @@
             Method to invoke when the New command is executed.
             </summary>
         </member>
+<<<<<<< HEAD
         <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.#ctor(Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+=======
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.#ctor(Orca.Modules.TextEditor.TextEditorModule,Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+>>>>>>> Fixing Closing Documents
             <summary>
             Initializes a new instance of the <see cref="T:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel"/> class.
             </summary>
@@ -57,7 +61,11 @@
             <param name="orchestraService">The orchestra service.</param>
             <param name="messageMediator">The message mediator.</param>
         </member>
+<<<<<<< HEAD
         <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.#ctor(System.String,Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+=======
+        <member name="M:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel.#ctor(System.String,Orca.Modules.TextEditor.TextEditorModule,Catel.MVVM.Services.IMessageService,Orchestra.Services.IOrchestraService,Catel.Messaging.IMessageMediator)">
+>>>>>>> Fixing Closing Documents
             <summary>
             Initializes a new instance of the <see cref="T:Orca.Modules.TextEditor.ViewModels.TextEditorViewModel"/> class.
             </summary>

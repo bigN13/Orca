@@ -27,6 +27,11 @@ namespace Orca.Modules.TextEditor.ViewModels
         private readonly IMessageService _messageService;
         private readonly IOrchestraService _orchestraService;
         private readonly IMessageMediator _messageMediator;
+<<<<<<< HEAD
+=======
+
+        private TextEditorModule _baseTextEditorClass;
+>>>>>>> Fixing Closing Documents
         TextEditorViewModel f;
 
         static ImageSourceConverter ISC = new ImageSourceConverter();
@@ -70,7 +75,11 @@ namespace Orca.Modules.TextEditor.ViewModels
         /// <param name="messageService">The message service.</param>
         /// <param name="orchestraService">The orchestra service.</param>
         /// <param name="messageMediator">The message mediator.</param>
+<<<<<<< HEAD
         public TextEditorViewModel(IMessageService messageService, IOrchestraService orchestraService, IMessageMediator messageMediator)
+=======
+        public TextEditorViewModel(TextEditorModule baseTextEditorClass, IMessageService messageService, IOrchestraService orchestraService, IMessageMediator messageMediator)
+>>>>>>> Fixing Closing Documents
         {
             Argument.IsNotNull(() => orchestraService);
             Argument.IsNotNull(() => orchestraService);
@@ -79,8 +88,13 @@ namespace Orca.Modules.TextEditor.ViewModels
             _messageService = messageService;
             _orchestraService = orchestraService;
             _messageMediator = messageMediator;
+<<<<<<< HEAD
 
             // Text Editor features
+=======
+            _baseTextEditorClass = baseTextEditorClass;
+            // Text Editor featuresbaseTextEditorClass
+>>>>>>> Fixing Closing Documents
             TextOptions = new TextEditorOptions() 
             {
                 ShowSpaces = true,
@@ -117,7 +131,11 @@ namespace Orca.Modules.TextEditor.ViewModels
         /// <param name="messageService">The message service.</param>
         /// <param name="orchestraService">The orchestra service.</param>
         /// <param name="messageMediator">The message mediator.</param>
+<<<<<<< HEAD
         public TextEditorViewModel(string filePath, IMessageService messageService, IOrchestraService orchestraService, IMessageMediator messageMediator)
+=======
+        public TextEditorViewModel(string filePath, TextEditorModule baseTextEditorClass, IMessageService messageService, IOrchestraService orchestraService, IMessageMediator messageMediator)
+>>>>>>> Fixing Closing Documents
         {
             Argument.IsNotNull(() => orchestraService);
             Argument.IsNotNull(() => orchestraService);
@@ -126,6 +144,10 @@ namespace Orca.Modules.TextEditor.ViewModels
             _messageService = messageService;
             _orchestraService = orchestraService;
             _messageMediator = messageMediator;
+<<<<<<< HEAD
+=======
+            _baseTextEditorClass = baseTextEditorClass;
+>>>>>>> Fixing Closing Documents
 
             // Text Editor features
             TextOptions = new TextEditorOptions()
@@ -149,6 +171,10 @@ namespace Orca.Modules.TextEditor.ViewModels
                 FilePath = filePath;
             }
 
+<<<<<<< HEAD
+=======
+            // Comands
+>>>>>>> Fixing Closing Documents
             ShowLineNumbersCommand = new Command(OnShowLineNumbersCommandExecute, OnShowLineNumbersCommandCanExecute);
             WordWrapCommand = new Command(OnWordWrapCommandExecute, OnWordWrapCommandCanExecute);
             EndLineCommand = new Command(OnEndLineCommandExecute, OnEndLineCommandCanExecute);
@@ -156,6 +182,10 @@ namespace Orca.Modules.TextEditor.ViewModels
             ShowTabCommand = new Command(OnShowTabCommandExecute, OnShowTabCommandCanExecute);
 
             SaveAsCommand = new Command(OnSaveAsCommandExecute, OnSaveAsCommandCanExecute);
+<<<<<<< HEAD
+=======
+            SaveCommand = new Command(OnSaveCommandExecute, OnSaveCommandCanExecute);
+>>>>>>> Fixing Closing Documents
             CloseCommand = new Command(OnCloseCommandExecute, OnCloseCommandCanExecute);
 
             Title = FileName;
@@ -457,9 +487,14 @@ namespace Orca.Modules.TextEditor.ViewModels
         {
             if (this.FilePath == null || saveAsFlag)
             {
+<<<<<<< HEAD
                 var dlg = new SaveFileDialog();
                 if (dlg.ShowDialog().GetValueOrDefault())
                     this.FilePath = dlg.SafeFileName;
+=======
+                OnSaveAsCommandExecute();
+                return;
+>>>>>>> Fixing Closing Documents
             }
 
             File.WriteAllText(this.FilePath, this.Document.Text);
@@ -483,11 +518,24 @@ namespace Orca.Modules.TextEditor.ViewModels
             {
                 var dlg = new SaveFileDialog();
                 if (dlg.ShowDialog().GetValueOrDefault())
+<<<<<<< HEAD
                     this.FilePath = dlg.SafeFileName;
+=======
+                {
+                    this.FilePath = dlg.FileName;
+                    this.Title = dlg.SafeFileName;
+                    //this.FilePath = dlg.SafeFileName;
+                }
+                    
+>>>>>>> Fixing Closing Documents
             }
 
             File.WriteAllText(this.FilePath, this.Document.Text);
             this.IsDirty = false;
+<<<<<<< HEAD
+=======
+            this.saveAsFlag = false;
+>>>>>>> Fixing Closing Documents
         }
 
         #endregion
@@ -505,6 +553,7 @@ namespace Orca.Modules.TextEditor.ViewModels
         
         private void OnCloseCommandExecute()
         {
+<<<<<<< HEAD
             //if (this.IsDirty)
             //{
                 var res = MessageBox.Show(string.Format("Save changes for file '{0}'?", this.FileName), "TextEditor App", MessageBoxButton.YesNoCancel);
@@ -517,6 +566,11 @@ namespace Orca.Modules.TextEditor.ViewModels
                 //this.Document = null;
 
             //}
+=======
+            _baseTextEditorClass.Close(this);
+            // Here to close the Tab
+            //this. = true;
+>>>>>>> Fixing Closing Documents
         }
 
         #endregion

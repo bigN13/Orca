@@ -11,13 +11,22 @@ using Orchestra.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+<<<<<<< HEAD
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+=======
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+>>>>>>> Fixing Closing Documents
 using System.Windows.Input;
 
 namespace Orca.Modules.TextEditor
 {
+<<<<<<< HEAD
     public enum ToggleEditorOption
     {
         WordWrap = 0,
@@ -27,6 +36,8 @@ namespace Orca.Modules.TextEditor
         ShowTabs = 4
     }
 
+=======
+>>>>>>> Fixing Closing Documents
     public class TextEditorModule : ModuleBase
     {
         #region Constants
@@ -218,7 +229,11 @@ namespace Orca.Modules.TextEditor
         private void NewDocumentCommandExecute()
         {
             var typeFactory = TypeFactory.Default;
+<<<<<<< HEAD
             var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>("Sheet " + count.ToString());
+=======
+            var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>(this);
+>>>>>>> Fixing Closing Documents
             _orchestraService.ShowDocument(orcaViewModel, "Sheet " + count.ToString());
 
             _files.Add(orcaViewModel);
@@ -247,7 +262,11 @@ namespace Orca.Modules.TextEditor
             if (dlg.ShowDialog().GetValueOrDefault())
             {
                 var fileViewModel = Open(dlg.FileName);
+<<<<<<< HEAD
                 ActiveDocument = fileViewModel;
+=======
+                //ActiveDocument = fileViewModel;
+>>>>>>> Fixing Closing Documents
             }
         }
 
@@ -259,7 +278,11 @@ namespace Orca.Modules.TextEditor
                 return fileViewModel;
 
             var typeFactory = TypeFactory.Default;
+<<<<<<< HEAD
             fileViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>(filepath);
+=======
+            fileViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>(filepath, this);
+>>>>>>> Fixing Closing Documents
             _orchestraService.ShowDocument(fileViewModel, fileViewModel.Title);
             _files.Add(fileViewModel);
 
@@ -281,8 +304,13 @@ namespace Orca.Modules.TextEditor
                 {
                     _activeDocument = value;
                     //RaisePropertyChanged("ActiveDocument");
+<<<<<<< HEAD
                     //if (ActiveDocumentChanged != null)
                     //    ActiveDocumentChanged(this, EventArgs.Empty);
+=======
+                    if (ActiveDocumentChanged != null)
+                        ActiveDocumentChanged(this, EventArgs.Empty);
+>>>>>>> Fixing Closing Documents
                 }
             }
         }
@@ -291,6 +319,7 @@ namespace Orca.Modules.TextEditor
 
         #endregion
 
+<<<<<<< HEAD
         #region ToggleEditorOptionCommand
         Command _toggleEditorOptionCommand = null;
         public Command ToggleEditorOptionCommand
@@ -356,5 +385,37 @@ namespace Orca.Modules.TextEditor
             }
         }
         #endregion ToggleEditorOptionCommand
+=======
+        internal void Close(TextEditorViewModel fileToClose)
+        {
+            if (fileToClose.IsDirty)
+            {
+                var res = MessageBox.Show(string.Format("Save changes for file '{0}'?", fileToClose.FileName), "AvalonDock Test App", MessageBoxButton.YesNoCancel);
+                if (res == MessageBoxResult.Cancel)
+                    return;
+                if (res == MessageBoxResult.Yes)
+                {
+                    Save(fileToClose);
+                }
+            }
+
+            _files.Remove(fileToClose);
+        }
+
+        internal void Save(TextEditorViewModel fileToSave, bool saveAsFlag = false)
+        {
+            if (fileToSave.FilePath == null || saveAsFlag)
+            {
+                var dlg = new SaveFileDialog();
+                if (dlg.ShowDialog().GetValueOrDefault())
+                    fileToSave.FilePath = dlg.FileName;
+                    //fileToSave.FilePath = dlg.SafeFileName;
+            }
+
+            File.WriteAllText(fileToSave.FilePath, fileToSave.Document.Text);
+            ActiveDocument.IsDirty = false;
+        }
+
+>>>>>>> Fixing Closing Documents
     }
 }

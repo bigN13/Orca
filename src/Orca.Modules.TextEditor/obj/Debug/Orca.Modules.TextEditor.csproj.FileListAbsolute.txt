@@ -27,3 +27,9 @@ F:\Έγγραφα\Git\Orca\src\Orca.Modules.TextEditor\obj\Debug\Orca.Modules.Te
 K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Intellisense\Keywords\keywords_csharp.txt
 K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Intellisense\Keywords\keywords_sql.txt
 K:\Visual Studio 2012\GitHub\Orca\output\Debug\Client\Modules\Intellisense\Keywords\options.xml
+<<<<<<< HEAD
+=======
+F:\Έγγραφα\Git\Orca\output\Debug\Client\Modules\Intellisense\Keywords\keywords_csharp.txt
+F:\Έγγραφα\Git\Orca\output\Debug\Client\Modules\Intellisense\Keywords\keywords_sql.txt
+F:\Έγγραφα\Git\Orca\output\Debug\Client\Modules\Intellisense\Keywords\options.xml
+>>>>>>> Fixing Closing Documents

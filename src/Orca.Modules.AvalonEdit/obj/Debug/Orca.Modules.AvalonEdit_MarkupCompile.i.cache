@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Orca.Modules.AvalonEdit
 
 
@@ -18,3 +19,25 @@ Views\AvalonEditView.xaml;Views\AvalonEditView2.xaml;Views\PropertyView.xaml;
 
 True
 
+=======
+﻿Orca.Modules.AvalonEdit
+
+
+library
+C#
+.cs
+F:\Έγγραφα\Git\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\
+Orca.Modules.AvalonEdit
+none
+false
+DEBUG;TRACE
+
+3-2094760761
+
+24-778748103
+30-1314305811
+Views\AvalonEditView.xaml;Views\AvalonEditView2.xaml;Views\PropertyView.xaml;
+
+False
+
+>>>>>>> Fixing Closing Documents
