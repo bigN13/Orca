@@ -4,7 +4,7 @@
 library
 C#
 .cs
-K:\Visual Studio 2012\GitHub\Orca\src\Orchestra.Shell.NET40\obj\Debug\
+F:\Έγγραφα\Git\Orca\src\Orchestra.Shell.NET40\obj\Debug\
 Orchestra
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG;NET40
 3938586354
 
 19-1322280207
-29546696259
+29838266791
 Views\AboutView.xaml;Views\MainWindow.xaml;Views\SplashScreen.xaml;
 
 False

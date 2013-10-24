@@ -11,33 +11,15 @@ using Orchestra.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-<<<<<<< HEAD
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-=======
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
->>>>>>> Fixing Closing Documents
 using System.Windows.Input;
 
 namespace Orca.Modules.TextEditor
 {
-<<<<<<< HEAD
-    public enum ToggleEditorOption
-    {
-        WordWrap = 0,
-        ShowLineNumber = 1,
-        ShowEndOfLine = 2,
-        ShowSpaces = 3,
-        ShowTabs = 4
-    }
-
-=======
->>>>>>> Fixing Closing Documents
     public class TextEditorModule : ModuleBase
     {
         #region Constants
@@ -229,11 +211,7 @@ namespace Orca.Modules.TextEditor
         private void NewDocumentCommandExecute()
         {
             var typeFactory = TypeFactory.Default;
-<<<<<<< HEAD
-            var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>("Sheet " + count.ToString());
-=======
             var orcaViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>(this);
->>>>>>> Fixing Closing Documents
             _orchestraService.ShowDocument(orcaViewModel, "Sheet " + count.ToString());
 
             _files.Add(orcaViewModel);
@@ -262,11 +240,7 @@ namespace Orca.Modules.TextEditor
             if (dlg.ShowDialog().GetValueOrDefault())
             {
                 var fileViewModel = Open(dlg.FileName);
-<<<<<<< HEAD
-                ActiveDocument = fileViewModel;
-=======
                 //ActiveDocument = fileViewModel;
->>>>>>> Fixing Closing Documents
             }
         }
 
@@ -278,11 +252,7 @@ namespace Orca.Modules.TextEditor
                 return fileViewModel;
 
             var typeFactory = TypeFactory.Default;
-<<<<<<< HEAD
-            fileViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>(filepath);
-=======
             fileViewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<TextEditorViewModel>(filepath, this);
->>>>>>> Fixing Closing Documents
             _orchestraService.ShowDocument(fileViewModel, fileViewModel.Title);
             _files.Add(fileViewModel);
 
@@ -304,13 +274,8 @@ namespace Orca.Modules.TextEditor
                 {
                     _activeDocument = value;
                     //RaisePropertyChanged("ActiveDocument");
-<<<<<<< HEAD
-                    //if (ActiveDocumentChanged != null)
-                    //    ActiveDocumentChanged(this, EventArgs.Empty);
-=======
                     if (ActiveDocumentChanged != null)
                         ActiveDocumentChanged(this, EventArgs.Empty);
->>>>>>> Fixing Closing Documents
                 }
             }
         }
@@ -319,73 +284,6 @@ namespace Orca.Modules.TextEditor
 
         #endregion
 
-<<<<<<< HEAD
-        #region ToggleEditorOptionCommand
-        Command _toggleEditorOptionCommand = null;
-        public Command ToggleEditorOptionCommand
-        {
-            get
-            {
-                if (this._toggleEditorOptionCommand == null)
-                {
-                    this._toggleEditorOptionCommand = new Command(() => ToggleEditorOptionCommand.Execute("ShowLineNumber"));
-                }
-
-                return this._toggleEditorOptionCommand;
-            }
-        }
-
-        private bool ToggleEditorOptionCommandCanExecute(object parameter)
-        {
-            if (this.ActiveDocument != null)
-                return true;
-
-            return false;
-        }
-
-        private void ToggleEditorOptionCommandExecute(object parameter)
-        {
-            TextEditorViewModel f = this.ActiveDocument;
-
-            if (parameter == null)
-                return;
-
-            if ((parameter is ToggleEditorOption) == false)
-                return;
-
-            ToggleEditorOption t = (ToggleEditorOption)parameter;
-
-            if (f != null)
-            {
-                switch (t)
-                {
-                    case ToggleEditorOption.WordWrap:
-                        f.WordWrap = !f.WordWrap;
-                        break;
-
-                    case ToggleEditorOption.ShowLineNumber:
-                        f.ShowLineNumbers = !f.ShowLineNumbers;
-                        break;
-
-                    case ToggleEditorOption.ShowSpaces:
-                        f.TextOptions.ShowSpaces = !f.TextOptions.ShowSpaces;
-                        break;
-
-                    case ToggleEditorOption.ShowTabs:
-                        f.TextOptions.ShowTabs = !f.TextOptions.ShowTabs;
-                        break;
-
-                    case ToggleEditorOption.ShowEndOfLine:
-                        f.TextOptions.ShowEndOfLine = !f.TextOptions.ShowEndOfLine;
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        }
-        #endregion ToggleEditorOptionCommand
-=======
         internal void Close(TextEditorViewModel fileToClose)
         {
             if (fileToClose.IsDirty)
@@ -416,6 +314,5 @@ namespace Orca.Modules.TextEditor
             ActiveDocument.IsDirty = false;
         }
 
->>>>>>> Fixing Closing Documents
     }
 }

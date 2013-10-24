@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-﻿Orca.Modules.AvalonEdit
-
-
-library
-C#
-.cs
-K:\Visual Studio 2012\GitHub\Orca\src\Orca.Modules.AvalonEdit\obj\Debug\
-Orca.Modules.AvalonEdit
-none
-false
-DEBUG;TRACE
-
-3-2094760761
-
-24-490557882
-30-1855662916
-Views\AvalonEditView.xaml;Views\AvalonEditView2.xaml;Views\PropertyView.xaml;
-
-True
-
-=======
 ﻿Orca.Modules.AvalonEdit
 
 
@@ -40,4 +18,3 @@ Views\AvalonEditView.xaml;Views\AvalonEditView2.xaml;Views\PropertyView.xaml;
 
 False
 
->>>>>>> Fixing Closing Documents
