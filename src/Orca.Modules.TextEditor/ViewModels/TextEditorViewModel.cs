@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using Xceed.Wpf.AvalonDock;
 
 namespace Orca.Modules.TextEditor.ViewModels
 {
@@ -97,6 +98,9 @@ namespace Orca.Modules.TextEditor.ViewModels
             this.IsReadOnly = false;
             this.ShowLineNumbers = false;
             this.WordWrap = false;
+
+            //this.Closing += new EventHandler<EventArgs>(dc_Closing);
+            //this.Closed += new EventHandler<EventArgs>(ClosedEventFromAvalon);
            
 
             // Comands
@@ -112,6 +116,32 @@ namespace Orca.Modules.TextEditor.ViewModels
 
             Title = FileName;
         }
+
+        void dc_Closing(object sender, EventArgs e)
+        {
+            MessageBoxResult Res = MessageBox.Show("Do you want to save?", "Save document?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            //switch (Res)
+            //{
+            //    case MessageBoxResult.Cancel:
+            //        //User cancelled, he probably doesn't want to close the window
+            //        e.Cancel = true;
+            //        break;
+            //    case MessageBoxResult.No:
+            //        //Nothing to do - continue closing
+            //        e.Cancel = false;
+            //        break;
+            //    case MessageBoxResult.Yes:
+            //        //He does want to save - launch save here!
+            //        //Save_Function_For_DocumentContent(sender);
+            //        e.Cancel = false;
+            //        break;
+            //    default:
+            //        //Something unexpected, better abort
+            //        e.Cancel = true;
+            //        break;
+            //}
+        }
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextEditorViewModel" /> class.
@@ -151,6 +181,8 @@ namespace Orca.Modules.TextEditor.ViewModels
             {
                 FilePath = filePath;
             }
+
+            //this.Closing += new EventHandler<EventArgs>(dc_Closing);
 
             // Comands
             ShowLineNumbersCommand = new Command(OnShowLineNumbersCommandExecute, OnShowLineNumbersCommandCanExecute);
@@ -518,6 +550,7 @@ namespace Orca.Modules.TextEditor.ViewModels
             _baseTextEditorClass.Close(this);
             // Here to close the Tab
             //this. = true;
+            //_orchestraService.CloseDocument(this);
         }
 
         #endregion

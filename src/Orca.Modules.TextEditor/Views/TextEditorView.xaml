@@ -8,13 +8,11 @@
 		xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 		xmlns:orchestra="http://orchestra.codeplex.com"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-						
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"				
 		xmlns:local="clr-namespace:Orca.Modules.TextEditor"                
 		xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock" 
 		xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
-		xmlns:ViewModels="clr-namespace:Orca.Modules.TextEditor.ViewModels"
-						
+		xmlns:ViewModels="clr-namespace:Orca.Modules.TextEditor.ViewModels"				
 		mc:Ignorable="d" 
 		d:DataContext="{d:DesignInstance ViewModels:TextEditorViewModel}"
 		d:DesignHeight="300" 

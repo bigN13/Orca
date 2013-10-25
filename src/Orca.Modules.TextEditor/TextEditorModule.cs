@@ -298,6 +298,7 @@ namespace Orca.Modules.TextEditor
             }
 
             _files.Remove(fileToClose);
+            _orchestraService.CloseDocument(fileToClose);
         }
 
         internal void Save(TextEditorViewModel fileToSave, bool saveAsFlag = false)
